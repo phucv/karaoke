@@ -1,0 +1,21 @@
+$.extend($.validator.messages, {
+    required     : "Trường này không được để trống",
+    remote       : "Dữ liệu tồn tại.",
+    email        : "Vui lòng nhập một địa chỉ E-mail hợp lệ.",
+    url          : "Vui lòng nhập một URL hợp lệ.",
+    date         : "Vui lòng nhập một ngày hợp lệ.",
+    dateISO      : "Vui lòng nhập một ngày hợp lệ (ISO).",
+    number       : "Vui lòng nhập một số hợp lệ.",
+    digits       : "Vui lòng nhập chỉ số.",
+    creditcard   : "Vui lòng nhập một số thẻ tín dụng hợp lệ.",
+    equalTo      : "Giá trị nhập lại không chính xác.",
+    extension    : "Vui lòng nhập một giá trị có chứa một phần mở rộng hợp lệ.",
+    maxlength    : $.validator.format("Độ dài tối đa là {0} ký tự."),
+    minlength    : $.validator.format("Độ dài tối thiểu là {0} ký tự."),
+    isPhoneNumber: "Số điện thoại không hợp lệ",
+    isEmail      : "Email không hợp lệ",
+    isPassword   : "Mật khẩu không hợp lệ",
+    isImageURL   : "URL không hợp lệ",
+    maxFileSize  : $.validator.format("Dung lượng tệp không được vượt quá {0}MB."),
+    min          : $.validator.format("Vui lòng nhập một giá trị lớn hơn hoặc bằng {0}.")
+});

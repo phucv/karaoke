@@ -1,0 +1,10 @@
+{
+  "description": "The CodeIgniter Application with Composer",
+  "require": {
+    "php": ">=5.6.2",
+    "codeigniter/framework": "^3.1",
+    "mpdf/mpdf": "v8.0.4"
+  },
+  "require-dev": {
+  }
+}

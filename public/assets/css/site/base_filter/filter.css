@@ -1,0 +1,631 @@
+/**********************************CSS FOR FILTER***********************************/
+.manage-filter {
+    padding: 0;
+}
+
+.manage-filter .width-25 {
+    width: 25%;
+}
+
+.manage-filter .width-100 {
+    width: 25%;
+}
+
+.manage-filter .filter-part {
+    display: inline-block;
+    /*padding: 3px 12px 3px 12px;*/
+}
+
+.manage-filter .block-part {
+    display: block;
+}
+
+.manage-filter .right-part {
+    float: right;
+}
+
+.manage-filter .left-part {
+    float: left;
+}
+
+.manage-filter .filter-row {
+    margin: 0 12px;
+    padding: 2px 0;
+}
+
+.manage-filter .filter-row.row-1 {
+    padding: 5px 0;
+    line-height: 1.8;
+    border-bottom: solid 1px #cbcbcb;
+}
+
+.manage-filter .row-custom {
+    border-bottom: solid 1px #cbcbcb;
+}
+
+.manage-filter .filter-row .sub-part {
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .btn-filter {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/*region********BTN CREATE LESSON ************/
+.manage-filter .filter-part .show-created {
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+.manage-filter .filter-part .show-created .show-text {
+    color: #4a4a4a;
+    margin-right: 5px;
+}
+
+.manage-filter .filter-part .show-created .show-text .count-select {
+    font-family: OpenSans-Semibold;
+}
+
+.manage-filter .filter-part .show-created .btn-create {
+    color: #0076ff;
+    cursor: pointer;
+    font-family: OpenSans-SemiBold;
+}
+
+.manage-filter .filter-part .show-created .btn-create:hover {
+    opacity: 0.8;
+}
+
+.manage-filter .filter-part .show-created .btn-create > i {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .show-created .btn-create > span {
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .show-selected {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #4a4a4a;
+    font-family: OpenSans-SemiBold;
+}
+
+.manage-filter .filter-part .show-selected > a {
+    display: inline-block;
+    padding: 0 10px;
+    letter-spacing: 0.5px;
+    color: #0076ff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.manage-filter .filter-part .show-selected > a:first-child {
+    padding-left: 0;
+}
+
+.manage-filter .filter-part .show-selected > a:last-child {
+    padding-right: 0;
+}
+
+.manage-filter .filter-part .show-selected .btn-delete-many {
+    padding-left: 0;
+}
+
+.manage-filter .filter-part .show-selected .btn-unselect {
+}
+
+/*endregion btn create*/
+/*region**********************FILTER CUSTOM ************/
+.manage-filter .data-filter-custom {
+    font-family: OpenSans;
+    font-size: 12px;
+}
+
+.manage-filter .data-filter-custom .value-filter-custom {
+    letter-spacing: 0.5px;
+    color: #4a4a4a;
+    padding-right: 9px;
+    position: relative;
+    margin-right: 2px;
+    display: inline-block;
+    max-width: 19%;
+    vertical-align: middle;
+}
+
+.manage-filter .data-filter-custom .value-filter-custom:last-child {
+    margin-right: 5px;
+}
+
+.manage-filter .data-filter-custom .value-filter-custom .filter-value-text {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 2px;
+    line-height: 1.2;
+}
+
+.manage-filter .data-filter-custom .value-filter-custom .btn-remove-value-filter-custom {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.manage-filter .data-filter-custom .value-filter-custom .btn-remove-value-filter-custom > i {
+    color: #9b9b9b;
+    font-size: 11px;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.manage-filter .data-filter-custom .value-filter-custom:hover .btn-remove-value-filter-custom > i {
+    color: #ff0000;
+    opacity: 1;
+}
+
+/***BTN-FILTER-CUSTOM***/
+.manage-filter .filter-part .btn-filter-custom {
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.6px;
+    color: #4a90e2;
+    padding: 0;
+}
+
+.manage-filter .filter-part .btn-filter-custom.show {
+    color: #34a857;
+}
+
+.manage-filter .filter-part .btn-filter-custom.active {
+    color: #f48229;
+}
+
+.manage-filter .filter-part .btn-filter-custom:hover {
+    opacity: 0.8;
+}
+
+.manage-filter .filter-part .btn-filter-custom > i {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .btn-filter-custom > span {
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .filter-quick {
+    background: url(../../../images/site/base_filter/icon-category.png) no-repeat 0 3px;
+    padding: 5px 2px 5px 25px;
+    background-size: 18px;
+    font-family: OpenSans-Semibold;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #9b9b9b;
+}
+
+.manage-filter .filter-part .filter-quick-btn {
+    border-radius: 4px;
+    background-color: #4990e2;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.manage-filter .filter-part .filter-quick-btn:hover {
+    opacity: 0.8;
+}
+
+.manage-filter .filter-part .filter-quick-btn > img {
+    width: 12px;
+}
+
+/*endregion filter custom*/
+/*region********FILTER SEARCH ************/
+.manage-filter .filter-part .search-part {
+    position: relative;
+    line-height: 1;
+    display: inline-block;
+    width: 100%;
+}
+
+.manage-filter .filter-part .search-part input {
+    border: none;
+    padding: 5px 25px 5px 25px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #4a4a4a;
+    outline: none;
+    width: 92%;
+    border-radius: 4px;
+    background-color: #f5f6fa;
+}
+
+.manage-filter .filter-part .search-part input:focus {
+    box-shadow: 0 0 2px 0 #1a9758;
+    transition: 0.5s;
+}
+
+.manage-filter .filter-part .search-part .btn-search {
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    cursor: pointer;
+}
+
+.manage-filter .filter-part .search-part .btn-search:hover {
+    opacity: 0.8;
+}
+
+.manage-filter .filter-part .search-part .btn-search > i {
+    color: #9b9b9b;
+    font-size: 14px;
+}
+
+.manage-filter .filter-part .search-part input:focus + span + span.btn-search i {
+    color: #9b9b9b;
+    transition: 0.5s;
+}
+
+.manage-filter .filter-part .search-part .btn-close-search {
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    right: -15px;
+}
+
+.manage-filter .filter-part .search-part .btn-close-search > i {
+    font-size: 14px;
+    font-weight: bold;
+    color: #9b9b9b;
+}
+
+.manage-filter .filter-part .search-part .btn-close-search:hover > i {
+    color: #4a4a4a;
+}
+
+/*endregion search*/
+/*region********FILTER SORT ************/
+.manage-filter .filter-part .filter-status {
+    margin: 0 35px;
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .filter-status .title-status {
+    font-size: 13px;
+    color: #55595c;
+    font-family: OpenSans-Semibold;
+    padding-right: 10px;
+}
+
+.manage-filter .filter-part .filter-status .btn-status {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .filter-status .btn-status > i {
+    font-size: 13px;
+    color: #cccccc;
+    padding: 0 5px;
+}
+
+.manage-filter .filter-part .filter-status .btn-status.active > i,
+.manage-filter .filter-part .filter-status .btn-status:hover > i {
+    color: #4990e2;
+}
+
+/*Active Icon public*/
+.manage-filter .filter-part .filter-status .status-public.active > i,
+.manage-filter .filter-part .filter-status .status-public:hover > i {
+    color: #f5a623;
+}
+
+/*Active icon private*/
+.manage-filter .filter-part .filter-status .status-private.active > i,
+.manage-filter .filter-part .filter-status .status-private:hover > i {
+    color: #cc0000;
+}
+
+.manage-filter .filter-part .filter-sort {
+    display: inline-block;
+}
+
+.manage-filter .filter-part .filter-sort > i {
+    color: #4a4a4a;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .filter-sort select {
+    border: none;
+    padding: 0;
+    color: #4a4a4a;
+    font-size: 13px;
+    text-align: left;
+    outline: none;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.manage-filter .filter-part .filter-sort select option {
+}
+
+/*endregion sort*/
+/**************POPUP-FILTER-CUSTOM*************/
+
+.manage-filter .filter-part .filter-custom-row {
+    padding: 5px 0;
+    display: block;
+    line-height: 1;
+}
+
+.manage-filter .filter-part .filter-custom-row.filter-input {
+    display: flex;
+}
+
+.manage-filter .filter-part .filter-custom-row.filter-input .data-filter-custom {
+    display: flex;
+    align-items: center;
+}
+
+.manage-filter .filter-part .filter-custom-row .row-filter-select-label {
+    font-size: 14px;
+    letter-spacing: 0.6px;
+    color: #9b9b9b;
+    padding: 4px 0 0 26px;
+    background: url(../../../images/site/base_filter/icon-book.png) no-repeat 0 0;
+    background-size: 18px;
+    display: inline-block;
+    font-family: OpenSans-SemiBold;
+}
+
+.manage-filter .filter-part .filter-custom-row .row-filter-select-label > i {
+    font-size: 18px;
+    color: #9b9b9b;
+    vertical-align: middle;
+    padding-right: 3px;
+}
+
+.manage-filter .filter-part .filter-custom-row .row-filter-select-label > span {
+    vertical-align: middle;
+}
+
+.manage-filter .filter-part .filter-custom-row .row-filter-select-label.no-img-bg {
+    background-image: none;
+    background-repeat: no-repeat;
+    padding-left: 0;
+}
+
+.manage-filter .filter-part .filter-custom-row .row-filter-select-label.filter-author {
+    background: url(../../../images/site/base_filter/icon-user.png) no-repeat;
+}
+
+.manage-filter .filter-part .filter-custom-row .row-filter-select-label.filter-clock {
+    background-image: url(../../../images/site/base_filter/icon-clock.png);
+    background-position-y: 3px;
+    background-size: 18px;
+    padding-right: 4px;
+}
+
+.manage-filter .filter-part .filter-custom-row .data-filter-custom .data-input {
+    position: relative;
+}
+
+.manage-filter .filter-part .filter-custom-row .data-filter-custom .data-input input {
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #cccccc;
+    margin: 0 10px;
+    width: 70px;
+    padding: 2px 40px 2px 8px;
+    font-family: OpenSans;
+    font-size: 12px;
+    height: 18px;
+}
+
+.manage-filter .filter-part .filter-custom-row .data-filter-custom .data-input img {
+    position: absolute;
+    top: 4px;
+    right: 18px;
+    width: 14px;
+}
+
+.manage-filter .filter-part .filter-custom-row .data-filter-custom .data-input .remove-date > i {
+    position: absolute;
+    top: 5px;
+    right: 35px;
+    width: 14px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #9b9b9b;
+    cursor: pointer;
+}
+
+.manage-filter .filter-part .popup-row-btn {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    font-family: OpenSans-Semibold;
+    line-height: 1.65;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding: 10px 12px 0;
+    border-top: 1px solid #cbcbcb;
+}
+
+.manage-filter .filter-part .popup-row-btn > span {
+    cursor: pointer;
+    padding: 3px 15px;
+    border-radius: 4px;
+}
+
+.manage-filter .filter-part .popup-row-btn span:hover {
+    opacity: 0.8;
+}
+
+.manage-filter .filter-part .popup-row-btn .row-btn-save {
+    color: #ffffff;
+    margin-right: 30px;
+    background: #34a857;
+    border: 1px solid #34a857;
+}
+
+.manage-filter .filter-part .popup-row-btn .row-btn-close {
+    color: #9b9b9b;
+    margin-right: 15px;
+    background: #ffffff;
+    border: 1px solid #9b9b9b;
+}
+
+.manage-filter .filter-part .popup-row-btn .row-btn-close.active {
+    color: #f48229;
+    border-color: #f48229;
+}
+
+.manage-filter .filter-part .filter-custom-row.filter-range {
+    margin-top: 15px;
+}
+
+.manage-filter .data-filter-custom.data-range {
+    width: 300px;
+    display: inline-block;
+    vertical-align: inherit;
+    margin-top: -20px;
+}
+
+/***********FILTER-QUICK-ADD***********/
+/*input*/
+.manage-filter .filter-quick-add .filter-quick-add-input {
+    margin-right: 5px;
+}
+
+.manage-filter .filter-quick-add .filter-quick-add-input select {
+    line-height: 1.08;
+    letter-spacing: normal;
+    text-align: left;
+    color: #373a3c;
+    font-size: 12px;
+    background-color: #ffffff;
+    border-bottom: solid 1px #cccccc;
+    padding: 4px 2px 2px 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    width: 20%;
+}
+
+/*btn*/
+.manage-filter .filter-quick-add .filter-quick-add-btn {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.manage-filter .filter-quick-add .filter-quick-add-btn:hover {
+    opacity: 0.8;
+}
+
+.manage-filter .filter-quick-add .filter-quick-add-btn > img {
+    width: 10px;
+    height: 10px;
+}
+
+/*Overwrite select 2*/
+.manage-filter .filter-quick-add .select2-container {
+    font-size: 12px;
+}
+
+.manage-filter .filter-quick-add .select2-container--default .select2-selection--single {
+    border-radius: 0;
+    background-color: #ffffff;
+    border-bottom: solid 1px #4990e2;
+    line-height: 1.08;
+    letter-spacing: normal;
+    text-align: left;
+    color: #373a3c;
+    height: 18px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+}
+
+.manage-filter .filter-quick-add .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 1.5;
+}
+
+.manage-filter .filter-quick-add .select2-container--default .select2-selection--single .select2-selection__arrow {
+    display: none;
+}
+
+.manage-filter .filter-quick-add .select2-results__option[aria-selected] {
+    cursor: pointer;
+    font-size: 12px;
+    font-family: OpenSans;
+    padding: 6px 10px;
+}
+
+.manage-filter .filter-quick-add .select2-container .select2-dropdown ::-webkit-scrollbar {
+    width: 4px;
+    /* for vertical scrollbars */
+    height: 4px;
+    /* for horizontal scrollbars */
+}
+
+.manage-filter .filter-quick-add .select2-container .select2-dropdown ::-webkit-scrollbar-track {
+    background: #dbdbdb;
+}
+
+.manage-filter .filter-quick-add .select2-container .select2-dropdown ::-webkit-scrollbar-thumb {
+    background: #9b9b9b;
+}
+
+/************END FILTER-QUICK-ADD*************/
+.manage-filter .filter-part .count-part {
+    padding: 2px 0;
+    display: inline-block;
+}
+
+.manage-filter .filter-part .count-rows {
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    color: #9b9b9b;
+}
+
+/**********************************END FILTER***********************************/
+
+@media only screen and (max-width: 1024px) {
+    .manage-filter .filter-part .filter-status .title-status {
+        display: none;
+    }
+
+    .manage-filter .filter-part .filter-status {
+        margin: 0 0 0 15px;
+    }
+
+    .manage-filter .filter-part .search-part input {
+        width: 70%;
+    }
+
+    .manage-filter .filter-row .sub-part {
+        margin: 0 5px;
+    }
+
+    .manage-filter .filter-row .sub-part:last-child {
+        margin: 5px 5px 10px;
+    }
+}

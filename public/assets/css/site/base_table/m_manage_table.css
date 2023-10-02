@@ -1,0 +1,495 @@
+/*** above Laptop L ***/
+@media screen and (min-width: 1441px) {
+    .manage-wrapper .result {
+        max-height: calc(100% - 160px);
+    }
+}
+
+/*** Laptop L ***/
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
+    .manage-wrapper .filter .row {
+        padding: 7px 30px 0 30px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        height: 40px;
+    }
+    .manage-wrapper .filter .search-ques,
+    .manage-wrapper .filter .search-ques-btn,
+    .manage-wrapper .filter .filter-area .list-category,
+    .manage-wrapper .filter .filter-area .list-level {
+        height: 30px;
+    }
+
+}
+
+/*** Laptop ***/
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .manage-wrapper .result .result-row .question-col,
+    .manage-wrapper .result .result-row .result-col {
+        /* padding: 10px 20px; */
+    }
+    .manage-wrapper .filter .row {
+        padding: 7px 30px 0 30px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        height: 40px;
+    }
+    .manage-wrapper .filter .search-ques,
+    .manage-wrapper .filter .search-ques-btn,
+    .manage-wrapper .filter .filter-area .list-category,
+    .manage-wrapper .filter .filter-area .list-level {
+        height: 30px;
+    }
+}
+
+/*** Tablet ***/
+@media screen and (max-width: 768px) and (min-width: 426px) {
+    .content {
+        padding: 15px;
+    }
+    .manage-wrapper .filter .row {
+        padding: 15px 30px 0 30px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        height: 40px;
+    }
+    .manage-wrapper .filter .search-ques,
+    .manage-wrapper .filter .search-ques-btn,
+    .manage-wrapper .filter .filter-area .list-category,
+    .manage-wrapper .filter .filter-area .list-level {
+        height: 30px;
+    }
+    .manage-wrapper .result .result-row .question-col,
+    .manage-wrapper .result .result-row .result-col {
+        /* padding: 10px 20px; */
+    }
+    .manage-wrapper .filter .row {
+        padding: 5px 15px 0 15px;
+        display: block;
+    }
+    .manage-wrapper .filter .row:nth-child(2) {
+        display: block;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper {
+        margin-top: 15px;
+        display: block;
+    }
+    .manage-wrapper .filter .popup-filter-field {
+        padding: 30px 35px;
+        top: 71px;
+        border: none;
+        width: 100%;
+        left: 0;
+        height: calc(100vh - 71px);
+        /* position: relative; */
+        /* left: 9934px; */
+    }
+    .manage-wrapper .filter .filter-area {
+        margin-top: 0px;
+        display: inline-block;
+        /* float: right; */
+    }
+    .manage-wrapper .popup-filter-field .categories .categories-checkboxes label, .manage-wrapper .popup-filter-field .level .level-checkboxes label, .manage-wrapper .popup-filter-field .required-program .required-program-checkboxes label {
+        width: 31%;
+    }
+    .manage-wrapper .filter .search-ques-wrapper {
+        display: inline-block;
+        width: 270px;
+        margin-bottom: 5px;
+        /* float: left; */
+    }
+    .manage-wrapper .quick-action-wrapper .quick-action .info {
+        padding: 0;
+        padding-left: 25px;
+    }
+    .manage-wrapper .row .add-question-wrapper {
+        width: auto;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper {
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        float: right;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper .filter-tags {
+        float: right;
+        text-align: left;
+        height: 40px;
+        margin-left: 5px;
+    }
+    .manage-wrapper .filter .filter-area .list-level {
+        /* float: right; */
+    }
+    .manage-wrapper .result .pagi {
+        padding: 0;
+    }
+    .manage-wrapper .result .pagi div {
+        padding-right: 10px;
+    }
+    .manage-wrapper .filter .filter-tags .tag {
+    }
+    .manage-wrapper .filter .filter-tags .tag .tag-text,
+    .manage-wrapper .filter .filter-tags .tag-wrapper .tag-text {
+        display: inline-block;
+    }
+    .manage-wrapper .filter .filter-tags .tag .close {
+        top: 10px;
+    }
+
+    .manage-wrapper .popup-filter-field .categories .categories-title,
+    .manage-wrapper .popup-filter-field .level .level-title,
+    .manage-wrapper .popup-filter-field .required-program .required-program-title {
+        width: 100%;
+    }
+    .manage-wrapper .popup-filter-field .categories .categories-checkboxes,
+    .manage-wrapper .popup-filter-field .level .level-checkboxes,
+    .manage-wrapper .popup-filter-field .required-program .required-program-checkboxes {
+        width: 100%;
+    }
+    .manage-wrapper .filter > .row {
+        position: static;
+    }
+    .manage-wrapper .result.hide {
+        height: 0;
+    }
+    .manage-wrapper .filter .search-ques {
+        width: 100%;
+    }
+
+    .container .content {
+        height: auto;
+    }
+
+    .manage-wrapper .result {
+        height: 500px;
+    }
+
+    .manage-wrapper .result .table-body {
+        height: 100%;
+    }
+
+    .manage-wrapper .quick-action-wrapper .quick-action .add-ques,
+    .manage-wrapper .quick-action-wrapper .quick-action .import-from-file {
+        display: none;
+    }
+    .manage-wrapper .popup-filter-field .apply-btn-wrapper .cancel-btn {
+        display: inline;
+        width: 110px;
+        height: 38px;
+        border-radius: 4px;
+        background-color: #f48229;
+        line-height: 1.3;
+        letter-spacing: 0.6px;
+        color: #484848;
+        border: 1px solid #c4c4c4;
+        background: white;
+        font-family: OpenSans;
+    }
+}
+
+/*** Mobile L ***/
+@media screen and (max-width: 425px) and (min-width: 376px) {
+    .content {
+        padding: 15px;
+    }
+    .manage-wrapper .filter .row {
+        padding: 15px 30px 0 30px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        height: 40px;
+    }
+    .manage-wrapper .filter .search-ques,
+    .manage-wrapper .filter .search-ques-btn,
+    .manage-wrapper .filter .filter-area .list-category,
+    .manage-wrapper .filter .filter-area .list-level {
+        height: 30px;
+    }
+    .manage-wrapper .result .result-row .question-col,
+    .manage-wrapper .result .result-row .result-col {
+        /* padding: 10px 20px; */
+    }
+    .manage-wrapper .filter .row {
+        padding: 5px 15px 0 15px;
+        display: block;
+
+    }
+    .manage-wrapper .filter .row:nth-child(2) {
+        display: block;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper {
+        margin-top: 15px;
+        display: block;
+    }
+    .manage-wrapper .filter .popup-filter-field {
+        padding: 30px 35px;
+        top: 71px;
+        border: none;
+        width: 100%;
+        left: 0;
+        height: calc(100vh - 71px);
+        /* position: relative; */
+        /* left: 9934px; */
+    }
+    .manage-wrapper .filter .filter-area {
+        margin-top: 5px;
+        display: block;
+    }
+    .manage-wrapper .popup-filter-field .categories .categories-checkboxes label, .manage-wrapper .popup-filter-field .level .level-checkboxes label, .manage-wrapper .popup-filter-field .required-program .required-program-checkboxes label {
+        width: 48%;
+    }
+    .manage-wrapper .filter .search-ques-wrapper {
+        display: inline-block;
+        width: 100%;
+    }
+    .manage-wrapper .quick-action-wrapper .quick-action .add-ques-icon,
+    .manage-wrapper .quick-action-wrapper .quick-action .info {
+        padding: 0;
+        padding-left: 10px;
+    }
+    .manage-wrapper .row .add-question-wrapper {
+        width: auto;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper {
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        float: right;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper .filter-tags {
+        float: right;
+        text-align: left;
+        height: 41px;
+        margin-left: 5px;
+    }
+    .manage-wrapper .filter .filter-area .list-level {
+        float: right;
+    }
+    .manage-wrapper .result .pagi {
+        padding: 0;
+    }
+    .manage-wrapper .result .pagi div {
+        padding-right: 10px;
+    }
+    .manage-wrapper .filter .filter-tags .tag {
+    }
+    .manage-wrapper .filter .filter-tags .tag .tag-text,
+    .manage-wrapper .filter .filter-tags .tag-wrapper .tag-text {
+        display: inline-block;
+    }
+    .manage-wrapper .filter .filter-tags .tag .close {
+        top: 10px;
+    }
+
+    .manage-wrapper .popup-filter-field .categories .categories-title,
+    .manage-wrapper .popup-filter-field .level .level-title,
+    .manage-wrapper .popup-filter-field .required-program .required-program-title {
+        width: 100%;
+    }
+    .manage-wrapper .popup-filter-field .categories .categories-checkboxes,
+    .manage-wrapper .popup-filter-field .level .level-checkboxes,
+    .manage-wrapper .popup-filter-field .required-program .required-program-checkboxes {
+        width: 100%;
+    }
+    .manage-wrapper .filter > .row {
+        position: static;
+    }
+    .manage-wrapper .result.hide {
+        height: 0;
+    }
+    .manage-wrapper .filter .search-ques {
+        width: 100%;
+    }
+
+    .container .content {
+        height: auto;
+    }
+
+    .manage-wrapper .result {
+        height: 500px;
+    }
+
+    .manage-wrapper .result .table-body {
+        height: 100%;
+    }
+
+    .manage-wrapper .quick-action-wrapper .quick-action .add-ques,
+    .manage-wrapper .quick-action-wrapper .quick-action .import-from-file {
+        display: none;
+    }
+    .manage-wrapper .popup-filter-field .apply-btn-wrapper .cancel-btn {
+        display: inline;
+        width: 110px;
+        height: 38px;
+        border-radius: 4px;
+        background-color: #f48229;
+        line-height: 1.3;
+        letter-spacing: 0.6px;
+        color: #484848;
+        border: 1px solid #c4c4c4;
+        background: white;
+        font-family: OpenSans;
+    }
+    .manage-wrapper .result .pagi .last {
+        padding: 0;
+    }
+}
+
+/*** Mobile M & Mobile S ***/
+@media screen and (max-width: 375px) {
+    .content {
+        padding: 15px;
+    }
+    .manage-wrapper .filter .row {
+        padding: 15px 30px 0 30px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        height: 40px;
+    }
+    .manage-wrapper .filter .search-ques,
+    .manage-wrapper .filter .search-ques-btn,
+    .manage-wrapper .filter .filter-area .list-category,
+    .manage-wrapper .filter .filter-area .list-level {
+        height: 30px;
+    }
+    .manage-wrapper .result .result-row .question-col,
+    .manage-wrapper .result .result-row .result-col {
+        /* padding: 10px 20px; */
+    }
+    .manage-wrapper .filter .row {
+        padding: 5px 15px 0 15px;
+        display: block;
+
+    }
+    .manage-wrapper .filter .row:nth-child(2) {
+        display: block;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper {
+        margin-top: 15px;
+        display: block;
+    }
+    .manage-wrapper .filter .popup-filter-field {
+        padding: 30px 35px;
+        top: 71px;
+        border: none;
+        width: 100%;
+        left: 0;
+        height: calc(100vh - 71px);
+        /* position: relative; */
+        /* left: 9934px; */
+    }
+    .manage-wrapper .filter .filter-area {
+        margin-top: 5px;
+        display: block;
+    }
+    .manage-wrapper .popup-filter-field .categories .categories-checkboxes label, .manage-wrapper .popup-filter-field .level .level-checkboxes label, .manage-wrapper .popup-filter-field .required-program .required-program-checkboxes label {
+        width: 48%;
+    }
+    .manage-wrapper .filter .search-ques-wrapper {
+        display: inline-block;
+        width: 100%;
+    }
+    .manage-wrapper .quick-action-wrapper .quick-action .add-ques-icon,
+    .manage-wrapper .quick-action-wrapper .quick-action .info {
+        padding: 0;
+        padding-left: 10px;
+    }
+    .manage-wrapper .row .add-question-wrapper {
+        width: auto;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper {
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+    }
+    .manage-wrapper .filter .filter-btn {
+        float: right;
+    }
+    .manage-wrapper .filter .filter-btn-wrapper .filter-tags {
+        float: right;
+        text-align: left;
+        height: 40px;
+        margin-left: 5px;
+    }
+    .manage-wrapper .filter .filter-area .list-level {
+        float: right;
+    }
+    .manage-wrapper .result .pagi {
+        padding: 0;
+    }
+    .manage-wrapper .result .pagi div {
+        padding-right: 10px;
+    }
+    .manage-wrapper .filter .filter-tags .tag {
+    }
+    .manage-wrapper .filter .filter-tags .tag .tag-text,
+    .manage-wrapper .filter .filter-tags .tag-wrapper .tag-text {
+        display: inline-block;
+    }
+    .manage-wrapper .filter .filter-tags .tag .close {
+        top: 10px;
+    }
+
+    .manage-wrapper .popup-filter-field .categories .categories-title,
+    .manage-wrapper .popup-filter-field .level .level-title,
+    .manage-wrapper .popup-filter-field .required-program .required-program-title {
+        width: 100%;
+    }
+    .manage-wrapper .popup-filter-field .categories .categories-checkboxes,
+    .manage-wrapper .popup-filter-field .level .level-checkboxes,
+    .manage-wrapper .popup-filter-field .required-program .required-program-checkboxes {
+        width: 100%;
+    }
+    .manage-wrapper .filter > .row {
+        position: static;
+    }
+    .manage-wrapper .result.hide {
+        height: 0;
+    }
+    .manage-wrapper .filter .search-ques {
+        width: 100%;
+    }
+
+    .container .content {
+        height: auto;
+    }
+
+    .manage-wrapper .result {
+        height: 500px;
+    }
+
+    .manage-wrapper .result .table-body {
+        height: 100%;
+    }
+
+    .manage-wrapper .quick-action-wrapper .quick-action .add-ques,
+    .manage-wrapper .quick-action-wrapper .quick-action .import-from-file {
+        display: none;
+    }
+    .manage-wrapper .popup-filter-field .apply-btn-wrapper .cancel-btn {
+        display: inline;
+        width: 110px;
+        height: 38px;
+        border-radius: 4px;
+        background-color: #f48229;
+        line-height: 1.3;
+        letter-spacing: 0.6px;
+        color: #484848;
+        border: 1px solid #c4c4c4;
+        background: white;
+        font-family: OpenSans;
+    }
+    .manage-wrapper .result .pagi .last {
+        padding: 0;
+    }
+    .manage-wrapper .filter .filter-area .list-category {width: 160px;}
+    .manage-wrapper .filter .filter-area .list-level {
+
+    }
+    .manage-wrapper .result .inner-container {
+        min-width: 100%;
+    }
+}

@@ -1,0 +1,320 @@
+/***** SIDE MENU*********************************************************/
+.side-menu {
+    display: inline-block;
+    /*float: left;*/
+    /*min-height: 100vh;*/
+    width: 249px;
+    border-right: solid 1px #e8e8e8;
+    position: fixed;
+}
+
+.side-menu.close {
+    width: 64px;
+}
+
+.side-menu .hide {
+    display: none;
+}
+
+.side-menu.close .hide {
+    display: unset;
+}
+
+.side-menu .logo {
+    border-bottom: solid 1px #bababa;
+    height: 58px;
+}
+
+.side-menu .logo > a {
+    text-align: center;
+    padding: 15px 0 14px 0;
+    height: 29px;
+}
+
+.side-menu > ul {
+    font-family: OpenSans;
+    font-size: 14px;
+    text-align: left;
+    max-height: calc(100vh - 170px) !important;
+    width: 100% !important;
+}
+
+.side-menu.close > ul {
+    max-height: calc(100vh - 277px) !important;
+}
+
+.side-menu > ul.menu_fixed {
+    border-top: solid 1px #ccc;
+    position: fixed;
+    bottom: 0;
+    width: 249px !important;
+}
+
+.side-menu.close > ul.menu_fixed {
+    width: 64px !important;
+}
+
+.side-menu > ul.menu_fixed .language_config {
+    text-align: center;
+    padding: 3px 0 0 0;
+    font-size: 13px;
+    color: var(--menu-text-color);
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #fff;
+}
+
+.side-menu > ul.menu_fixed .language_config a {
+    display: inline-block;
+    padding: 2px 5px;
+    vertical-align: middle;
+}
+
+.side-menu.close ul .menu-items {
+    text-align: center;
+}
+
+.side-menu ul .menu-items a {
+    padding: 10px 0 10px 9%;
+    cursor: pointer;
+    color: var(--menu-text-color);
+    position: relative;
+    text-align: left;
+}
+
+.side-menu ul .menu-items.match a {
+    color: #f68a1e;
+}
+
+.side-menu ul .menu-items a.text_parent {
+    background: #eaeaea;
+    border-bottom: 1px solid #cecece;
+}
+
+.side-menu.close ul .menu-items a {
+    padding: 11px 5px 11px 10px;
+}
+
+.side-menu ul .menu-items a span {
+
+}
+
+.side-menu ul .menu-items a .item-icons {
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.side-menu ul .menu-items a .item-text {
+    vertical-align: middle;
+    margin-left: 4%;
+    width: 72%;
+    display: inline-block;
+    font-family: OpenSans-Semibold;
+}
+
+.side-menu ul .menu-items .sub-menu-items a .item-text {
+    margin-left: 0;
+    width: 98%;
+    font-family: OpenSans;
+}
+
+.side-menu.close ul .menu-items a .item-text {
+    display: none;
+}
+
+/*Icon drop-arrow*/
+.side-menu ul .menu-items .drop-arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    border-width: 6px 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--menu-text-color);
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.side-menu ul .menu-items.show .drop-arrow {
+    border-color: var(--menu-text-color) transparent transparent transparent;
+    margin-left: -1px;
+}
+
+.side-menu ul .menu-items.active .drop-arrow {
+    border-color: transparent transparent transparent #ffffff;
+}
+
+.side-menu ul .menu-items.active.show .drop-arrow {
+    border-color: #ffffff transparent transparent transparent;
+    margin-top: 2%;
+}
+
+.side-menu ul .menu-items.active > a {
+    background-color: #0A9D57;
+    color: #ffffff;
+    font-family: OpenSans-Semibold;
+}
+
+.side-menu ul .menu-items.show > a {
+
+}
+
+.side-menu ul .menu-items > a:hover {
+    background-color: #0A9D57;
+    color: #ffffff;
+}
+
+.side-menu ul .has-sub.info {
+    display: none;
+}
+
+.side-menu ul .has-sub {
+
+}
+
+.side-menu ul .has-sub ul {
+    display: none;
+}
+
+.side-menu ul .has-sub.show ul {
+    display: block;
+}
+
+.side-menu ul .has-sub .sub-menu-items {
+
+}
+
+.side-menu ul .has-sub .sub-menu-items a {
+    padding: 5px 0 5px 9%;
+}
+
+.side-menu.close ul .has-sub .sub-menu-items a {
+    padding: 5px 0 5px 25px;
+}
+
+.side-menu ul .sub-menu-items .item-text {
+    font-size: 13px;
+}
+
+.side-menu .has-sub span {
+
+}
+
+.side-menu .has-sub.info .avatar img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.information-menu.has-sub .avatar img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.side-menu .has-sub .sub-item-icon {
+    padding-right: 11px;
+    vertical-align: middle;
+}
+
+.side-menu .has-sub .sub-item-text {
+    vertical-align: text-top;
+}
+
+.side-menu.close .has-sub .sub-item-text {
+    display: none;
+}
+
+.side-menu .has-sub ul .sub-menu-items:hover > a {
+    background-color: #ffffff;
+    color: #0A9D57;
+}
+
+/*.side-menu ul .has-sub:hover ul{
+    display: block;
+    transition: 5s;
+}*/
+
+.side-menu .has-sub ul .sub-menu-items.active > a {
+    background-color: #ffffff;
+    color: #0A9D57;
+    font-family: OpenSans-Semibold;
+}
+
+/*****************************************************************************************************************
+
+
+/******************************************************************************************************************
+                                                MOBLIE                                    
+/******************************************************************************************************************/
+@media only screen and (max-width: 779px) {
+    .side-menu {
+        width: 0;
+        height: auto;
+        min-height: 100vh;
+        max-height: none;
+        z-index: 1;
+        position: fixed;
+        background-color: white;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        overflow-x: hidden;
+        transition: 1s;
+    }
+
+    .side-menu ul .menu-items a {
+        white-space: nowrap;
+    }
+
+    .side-menu ul .has-sub.info {
+        display: block;
+    }
+
+    .side-menu ul #menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 985px) and (min-width: 769px) {
+    .side-menu ul .menu-items a {
+
+    }
+
+}
+
+.side-menu .box-search {
+    margin: 5px;
+}
+
+.side-menu .box-search input {
+    border: 1px solid #ccc;
+    padding: 5px 35px 5px 10px;
+    border-radius: 4px;
+    width: calc(100% - 48px);
+    position: relative;
+    color: #4a4a4a;
+}
+
+.side-menu .box-search i.ic_search {
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    font-size: 16px;
+    color: #9b9b9b;
+}
+
+.side-menu .box-search i.ic_remove {
+    position: absolute;
+    font-size: 14px;
+    color: #9b9b9b;
+    cursor: pointer;
+    right: 27px;
+    top: 12px;
+    display: none;
+}
+
+.side-menu .box-search i.ic_remove:hover {
+    color: red;
+}

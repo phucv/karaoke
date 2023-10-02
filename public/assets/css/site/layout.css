@@ -1,0 +1,100 @@
+/*****CONTAINER***************************************************************************/
+.container {
+    width: 100%;
+    /*float: left;*/
+    padding-top: 59px;
+}
+
+.container.hide-menu .content-layout {
+    width: calc(100% - 40px);
+}
+
+/*****CONTENT*****************************************/
+.content-layout {
+    background-color: #f1f1f1;
+    vertical-align: middle;
+    padding: 9px 19px 0px 19px;
+    /*min-height: calc(100vh - 80px);*/
+    width: calc(100% - 290px);
+    margin-left: 250px;
+}
+
+.wrapper-content-layout {
+    text-align: left;
+    background-color: white;
+}
+
+.wrapper-content-layout .text-red{
+    color: red;
+}
+
+/******************************************************************************************************************
+                                                MOBLIE                                    
+/******************************************************************************************************************/
+@media only screen and (max-width: 779px) {
+    .container .content-layout {
+        /*width: 100%;*/
+        padding: 20px 15px 0 15px;
+        margin-top: 71px;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/*******************DatePicker*************/
+.ui-datepicker {
+    z-index: 9 !important;
+}
+
+/*region**********ThieuLM-10052017 Css for enscroll*********************/
+.vertical-track,
+.horizontal-track {
+    width: 4px;
+    background-color: #dbdbdb;
+    border-radius: 4px;
+}
+
+.vertical-handle,
+.horizontal-handle {
+    width: 4px;
+    background-color: #9b9b9b;
+    border-radius: 4px;
+}
+
+/*endregion ThieuLM*/
+/*Overwrite select 2*/
+.select2-container {
+
+}
+
+.select2-container .select2-results__option[aria-selected] {
+    cursor: pointer;
+    font-family: OpenSans;
+    padding: 6px 10px;
+}
+
+.select2-container .select2-dropdown ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.select2-container .select2-dropdown ::-webkit-scrollbar-track {
+    background: #dbdbdb;
+}
+
+.select2-container .select2-dropdown ::-webkit-scrollbar-thumb {
+    background: #9b9b9b;
+}
+
+.videojs-style {
+    width: 40vh;
+    height: 30vh
+}
+
+.videojs-style-2 {
+    width: 100%;
+    height: 200px
+}

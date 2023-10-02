@@ -1,0 +1,360 @@
+@media (max-width: 1024px) {
+    .cc_list_shop_cart_payment_child p:nth-child(2) {
+        font-size: 27px !important;
+    }
+
+    .js_list_shop_cart_remove i {
+        font-size: 13px;
+    }
+
+    .cc_item_course_cart_mobi {
+        position: relative;
+    }
+
+    .cc_list_shop_cart_img {
+        float: left;
+    }
+
+    .cc_list_shop_cart_money {
+        font-size: 12px;
+    }
+
+    .cc_list_shop_cart_remove {
+        left: 98%;
+        position: absolute;
+        top: -12px;
+    }
+
+    .cc_payment_1_form .cc_payment_3_term {
+        display: block;
+    }
+
+    .custom-control-label {
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cc_list_shop_cart_remove {
+        left: 95%;
+        position: absolute;
+        top: -17px;
+    }
+}
+
+@media (min-width: 700px) and  (max-width: 1024px) {
+    .btn-noty-hidden {
+        display: none !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .css_brand_content_style div:first-child div.cc_brand_content {
+        border-bottom: 1px solid #dedfe0;
+    }
+
+    .cc_block_brand .cc_brand_content {
+        padding: 26px 0;
+
+    }
+}
+
+@media (min-width: 411px) and (max-width: 731px) {
+    .cc_block_students_say .js_comp_item_child {
+        display: flex;
+    }
+
+    .cc_block_students_say .cc_students_say {
+        width: 100% !important;
+    }
+
+    .cc_block_students_say .js_comp_item {
+        min-width: 362px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .cc_course_of_user_item_child {
+        width: unset !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+    }
+
+    .cc_list_shop_cart_remove .btn {
+        padding: 0;
+    }
+
+    .cc_list_shop_cart_remove .btn:hover {
+        background-color: var(--white);
+        color: var(--main-color);
+    }
+
+    .cc_student_feedback_content {
+        display: block;
+    }
+
+    .cc_students_say {
+        width: 377px;
+    }
+
+    .cc_btn_transfer {
+        width: 100%;
+    }
+
+    .info_user_pay label {
+        text-align: left !important;
+    }
+
+    .cc_list_shop_cart_img img {
+        min-width: 90px !important;
+        height: 67px !important;
+    }
+}
+
+@media (max-width: 414px) {
+    .cc_payment_item_child {
+        display: block !important;
+        text-align: center !important;
+    }
+
+    .cc_payment_item:not(.third_color)::after {
+        border-top: 38px solid transparent !important;
+        border-bottom: 38px solid transparent !important;
+    }
+
+    .cc_payment_item_step {
+        margin: 0 auto !important;
+    }
+
+    .cc_item_course_cart_mobi {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 375px) {
+    .cc_student_feedback_col_per {
+        width: 125px;
+    }
+
+    .cc_students_say {
+        width: 337px;
+    }
+
+    .cc_student_feedback_content, .cc_student_feedback_col_item {
+        margin: 0 auto;
+    }
+
+    .cc_student_feedback_col_per {
+        display: none;
+    }
+
+    .cc_reviews_search_box {
+        position: relative !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .cc_students_say {
+        width: 280px;
+    }
+}
+
+@media (min-width: 576px) {
+
+    .cc_tabs_content {
+        /*display: none;*/
+        flex: 1 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 15px;
+    }
+
+    .cc_course_of_user_item_child {
+        width: unset !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+    }
+
+    .cc_payment_item_child {
+        flex-direction: row;
+    }
+
+    .cc_payment_item:not(.third_color)::after {
+        border-top: 27px solid transparent;
+        border-bottom: 27px solid transparent;
+    }
+
+    .cc_payment_1_form_child {
+        width: 350px;
+    }
+
+    .cc_payment_2_time_step {
+        flex-direction: row;
+    }
+
+    .cc_payment_2_time_course {
+        padding-left: 85px;
+    }
+
+    .cc_payment_3_term {
+        flex-direction: row;
+    }
+
+    .cc_payment_table_outline {
+        border: 1px solid var(--light-gray);
+        padding: 20px;
+        border-radius: 3px;
+    }
+
+    .cc_navbar_mobile_search .form-inline .form-control {
+        width: 90% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .cc_intro_list_course_feature, .cc_list_course_feature {
+        flex-direction: row;
+    }
+
+    .cc_intro_list_course_rate_star, .cc_list_course_rate_star {
+        margin-right: 5px;
+    }
+
+    .cc_intro_list_course_rate_level, .cc_list_course_rate_level {
+        padding-left: 15px;
+        display: inline-block;
+    }
+
+    .cc_intro_list_course_img, .cc_list_course_img {
+        margin-bottom: 0;
+    }
+
+    .cc_list_course_content {
+        margin-bottom: 10px;
+    }
+
+    .cc_intro_course_details_preview {
+        position: absolute;
+        margin-top: 15px;
+    }
+
+    .cc_intro_course_details_btn_add_cart .btn {
+        width: 100% !important;
+    }
+
+    .cc_what_learn_content li {
+        width: 45%;
+    }
+
+    .cc_featured_review_report span:first-child {
+        display: unset;
+        margin-bottom: 0;
+    }
+
+    .cc_comp_item {
+        width: 221px;
+    }
+
+    .cc_course_of_user_item {
+        width: 217px;
+    }
+
+    .cc_students_say {
+        width: 337px;
+    }
+
+    .cc_tabs_layout {
+        width: 695px;
+    }
+
+    .cc_brand_content p {
+        width: 357px;
+    }
+
+    .cc_tabs_layout_mobi {
+        display: none;
+    }
+
+    .first_brand_content {
+        border-left: 1px solid #dedfe0;
+    }
+}
+
+@media (min-width: 992px) {
+    .cc_navbar_cat, .cc_navbar_cart {
+        margin-left: 10px;
+    }
+
+    .cc_comp_item {
+        width: 223px;
+    }
+
+    .cc_tabs_content {
+        max-width: 219px;
+        display: flex;
+    }
+
+    .cc_preview_video_layout {
+        width: 900px;
+    }
+
+    .cc_students_say {
+        width: 301px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cc_comp_item {
+        width: 212px;
+    }
+
+    .cc_tabs_content {
+        max-width: 429px;
+    }
+
+    .cc_students_say {
+        width: 360px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cc_tabs_child {
+        text-align: center;
+        display: flex;
+    }
+
+    .css_brand_content_style div {
+        padding: 0 !important;
+    }
+
+    .css_brand_content_style {
+        display: inherit !important;
+    }
+
+    .css_brand_content_style {
+        display: inherit !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .cc_list_shop_cart_child {
+        display: flex;
+    }
+
+    .cc_list_shop_cart_money {
+        text-align: right;
+    }
+
+    .cc_item_course_cart_mobi {
+        display: flex;
+        width: 80%;
+    }
+}
+
+@media (min-width: 1366px) {
+    .cc_tabs_layout {
+        width: 665px;
+    }
+}

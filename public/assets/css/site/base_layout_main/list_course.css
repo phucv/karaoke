@@ -1,0 +1,145 @@
+.cc_block_list_course {
+    background-color: var(--white);
+    padding: 30px 0;
+}
+
+.cc_block_list_course .custom-select:focus {
+    border: 1px solid #ced4da;
+    box-shadow: none;
+}
+
+.cc_list_course_item {
+    padding: 15px 0;
+    border-top: 1px solid var(--light-gray);
+    cursor: pointer;
+}
+
+.cc_list_course_item:last-child {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.cc_list_course_img {
+    height: 125px;
+    overflow: hidden;
+}
+
+.cc_list_course_img img {
+    box-shadow: 0 0 0 1px hsla(220, 7%, 92%, .5);
+}
+
+.cc_list_course_title p {
+    font-size: var(--fsize-small);
+    color: var(--gray);
+    margin-bottom: 10px;
+}
+
+.cc_list_course_title a {
+    font-weight: 600;
+    margin-bottom: 0;
+    color: var(--gray);
+}
+
+.cc_list_course_content {
+    font-size: var(--fsize-small);
+    color: var(--gray);
+}
+
+.cc_list_course_rate_hightest {
+    background-color: #F4C150;
+    font-size: 9px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 1px 7px;
+    position: relative;
+    display: inline-block;
+}
+
+.cc_list_course_lectures {
+    margin-bottom: 10px;
+}
+
+.cc_list_course_lectures li::before {
+    content: "" !important;
+}
+
+.cc_list_course_rate_hightest::after {
+    content: "";
+    border-radius: 3px;
+    right: -5px;
+    background: inherit;
+    height: 11px;
+    position: absolute;
+    top: 2px;
+    transform: rotate(45deg);
+    width: 11px;
+    z-index: 1;
+    display: block;
+}
+
+.css_show_tag {
+    margin-right: 20px;
+}
+
+.cc_list_course_rate_level {
+    font-size: var(--fsize-small);
+    color: var(--gray);
+    display: block;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.cc_list_course_rate_level li {
+    position: relative;
+    display: inline-block;
+}
+
+.cc_list_course_rate_level li:not(:first-child) {
+    margin-left: 15px;
+}
+
+.cc_list_course_rate_num, .cc_list_course_rate_star {
+    display: inline-block;
+}
+
+.cc_list_course_rate_num li:first-child {
+    margin-left: 0;
+}
+
+.cc_list_course_rate_star i {
+    font-size: 12px;
+    color: var(--yellow);
+}
+
+.cc_list_course_rate_num {
+    font-size: var(--fsize-small);
+    color: var(--gray);
+}
+
+.cc_list_course_rate_num span {
+    color: var(--light-gray);
+}
+
+.cc_list_course_details > i {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: var(--main-color);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cc_comp_pagination {
+    margin-top: 30px;
+}
+
+.cc_comp_pagination .page-item.active .page-link {
+    background-color: var(--sec-color);
+    border-color: var(--sec-color);
+    color: var(--white);
+}
+
+.cc_comp_pagination .page-item .page-link {
+    color: var(--sec-color);
+}

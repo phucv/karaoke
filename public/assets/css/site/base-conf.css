@@ -1,0 +1,53 @@
+/* Variables for site
+------------------------------------------------------------------------------------------------------*/
+:root {
+    --main-text-color: #4a4a4a;
+    --main-bgcolor: #0a9d57;
+    --main-title-color: #4a4a4a;
+    --main-title-hover-color: #046f56b3;
+    --main-title-active-color: #0a9d57;
+    /**---------------------
+    variables for menu
+    ---------------------**/
+    --menu-text-color: #4a4a4a;
+    --menu-hover-bgcolor: #0a9d57;
+    --menu-hover-color: #0a9d57;
+    --menu-active-bgcolor: #0a9d57;
+    --menu-active-color: #0a9d57;
+
+    /** variables for title header manager(ex: header manage class, manage course) **/
+    --block-manage-header-color: #4a4a4a;
+    --block-manage-header-bgcolor: #ffffff;
+    --block-manage-header-bocolor: #f68a1e;
+
+    /** variables for header (ex: header add class, add course) **/
+    --block-header-color: #ffffff;
+    --block-header-bgcolor: #0a9d57;
+    --block-header-bocolor: #0a9d57;
+
+    /** variables for header modal**/
+    --modal-header-color: #ffffff;
+    --modal-header-bgcolor: #0a9d57;
+    --modal-header-bocolor: #0a9d57;
+
+    /**---------------------
+    variables for button
+    ---------------------**/
+    /*btn enable*/
+    --btn-enable-color: #ffffff;
+    --btn-enable-bgcolor: #0a9d57;
+    --btn-enable-bocolor: #0a9d57;
+    /*btn enable hover*/
+    --btn-enable-hover-color: #ffffff;
+    --btn-enable-hover-bgcolor: #096e3c;
+    --btn-enable-hover-bocolor: #096e3c;
+
+    /*btn disable*/
+    --btn-disable-color: #4a4a4a;
+    --btn-disable-bgcolor: #ffffff;
+    --btn-disable-bocolor: #cbcbcb;
+    /*btn cancel*/
+    --btn-cancel-color: #000000;
+    --btn-cancel-bgcolor: #cccccc;
+    --btn-cancel-bocolor: #cccccc;
+}

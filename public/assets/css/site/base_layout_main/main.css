@@ -1,0 +1,318 @@
+:root {
+    --fsize-extra-small: 10px;
+    --fsize-small: 13px;
+    --bshadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+    --main-color: #ec5252;
+    --main-color-hover: #992337;
+    --sec-color: #17a2b8;
+    --sec-color-hover: #00576b;
+    --light-gray: #bcbcbc;
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url("../../../fonts/Open_Sans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: OpenSans-Semibold;
+    src: url("../../../fonts/Open_Sans/OpenSans-Bold.ttf");
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--dark);
+    font-size: 15px;
+    background-color: var(--light);
+    line-height: 1.43;
+    padding-top: 65px;
+}
+
+body.overflow_hidden {
+    overflow: hidden;
+}
+
+.main-body {
+    min-height: calc(100vh - 410px);
+}
+
+.main-body.content-layout {
+    height: calc(100vh - 65px);
+}
+
+.btn:focus, input:focus {
+    box-shadow: none !important;
+}
+
+input:focus {
+    border-color: unset !important;
+}
+
+.container-fluid {
+    max-width: 1440px;
+}
+
+::selection {
+    background-color: var(--sec-color);
+    color: var(--white);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--sec-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    z-index: -1;
+}
+
+/***********CSS for jGrowl-notification***************/
+/*define min height of notify*/
+.jGrowl {
+    z-index: 9999999 !important;
+}
+
+.jGrowl-notification {
+    width: 300px;
+    min-height: 0px;
+    border-radius: 4px;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.12);
+}
+
+.jGrowl-notification .jGrowl-message {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #4a4a4a;
+}
+
+.jGrowl-notification .jGrowl-message > i {
+    font-size: 18px;
+    color: #00b511;
+    vertical-align: middle;
+}
+
+.jGrowl-notification .jGrowl-message > span {
+    vertical-align: middle;
+    padding-left: 10px;
+    display: inline-block;
+    width: 80%;
+}
+
+.jGrowl-notification .jGrowl-close {
+    outline: none;
+    padding: 1px;
+}
+
+.jGrowl-notification .jGrowl-close:hover {
+    opacity: 0.8;
+}
+
+.jGrowl-notification .jGrowl-close > i {
+    font-size: 18px;
+    color: #9b9b9b;
+}
+
+/*Success*/
+.alert-success {
+    background-color: #dcf3cd !important;
+    border: solid 1px #00b510;
+}
+
+/*Danger*/
+.alert-danger {
+    background-color: #f2dede !important;
+    border-color: #da9694;
+}
+
+.alert-danger .jGrowl-message {
+    color: #a94442;
+}
+
+.alert-danger .jGrowl-message > i {
+    color: #a94442;
+}
+
+/*Error*/
+.alert-error {
+    background-color: #f2dede !important;
+    border-color: #da9694;
+}
+
+.alert-error .jGrowl-message {
+    color: #a94442;
+}
+
+.alert-error .jGrowl-message > i {
+    color: #a94442;
+}
+
+/*Warning*/
+.alert-warning {
+    background-color: #f2dede;
+    border-color: #da9694;
+}
+
+.alert-warning .jGrowl-message {
+    color: #a94442;
+}
+
+.alert-warning .jGrowl-message > i {
+    color: #a94442;
+}
+
+/*text lable error*/
+label.error {
+    color: red;
+}
+
+/*new loading*/
+.loading-div {
+    opacity: 0.6;
+    position: absolute;
+    background: #ccc;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 9999999;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #229541;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-sizing: content-box;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/******** loading-overlay ********/
+#loading-overlay {
+    position: absolute;
+    background: #ccc;
+    opacity: 0.6;
+    z-index: 9999;
+    display: none;
+}
+
+#loading-overlay #loading-overlay-animation {
+    /*border: 16px solid #f3f3f3; !* Light grey *!*/
+    /*border-top: 16px solid #3498db; !* Blue *!*/
+    /*border-radius: 50%;*/
+    /*width: 120px;*/
+    /*height: 120px;*/
+    /*animation: spin 2s linear infinite;*/
+    border: 5px solid white;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #229541;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#loading-overlay-modal {
+    position: absolute;
+    background: #ccc;
+    opacity: 0.6;
+    z-index: 9999;
+    display: none;
+    top: 0px;
+    right: 0px;
+}
+
+#loading-overlay-modal #loading-overlay-modal-animation {
+    /*border: 16px solid #f3f3f3; !* Light grey *!*/
+    /*border-top: 16px solid #3498db; !* Blue *!*/
+    /*border-radius: 50%;*/
+    /*width: 120px;*/
+    /*height: 120px;*/
+    /*animation: spin 2s linear infinite;*/
+    border: 5px solid white;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #229541;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.not-data {
+    width: 300px;
+    margin-left: 20px;
+}
+
+.not-data-category {
+    margin-left: 35px;
+}
+
+/*css modal edit info user in first login*/
+.css_change_info_first_login {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.css_change_info_first_login {
+    top: 50px;
+}
+
+.css_change_info_first_login .modal-header .close {
+    padding: 0;
+    margin: 0 3px;
+}
+
+.css_change_info_first_login .modal-header .title {
+    font-size: 17px;
+    margin: 2px 10px;
+    font-weight: 600;
+}
+
+.css_change_info_first_login .form-active-order .form-row .btn-active-order {
+    padding-top: 7px;
+}
+
+.css_change_info_first_login .modal-header {
+    padding: 2px 0;
+}
