@@ -12,17 +12,17 @@
     <?php echo isset($label) ? "<span>" . $label . ": </span> " : ""; ?>
 </span>
 <span class="data-filter-custom" filter-field="<?php echo isset($filter_field) ? $filter_field : ""; ?>">
-    <span class="data-filter-default"><?php echo isset($data_default) ? $data_default : get_string("v-filter-not_chosen"); ?></span>
+    <span class="data-filter-default"><?php echo isset($data_default) ? $data_default : "Chưa chọn"; ?></span>
     <span class="data-filter-append"></span>
 </span>
 <span class="filter-quick-add">
     <span class="filter-quick-add-input hidden">
         <select class="value-add select2 e-filter-add-value"
                 <?php echo isset($url_ajax) && isset($list_data) && !count($list_data) ? "url-ajax='$url_ajax'" : "" ?>
-                name="<?php echo isset($filter_field) ? $filter_field : ""; ?>" data-placeholder="<?php echo get_string("v-filter-chosen"); ?>"
+                name="<?php echo isset($filter_field) ? $filter_field : ""; ?>" data-placeholder="Chọn"
                 filter-type="filter" filter-field="<?php echo isset($filter_field) ? $filter_field : ""; ?>"
                 <?php echo isset($data_search) ? "data-search='$data_search'" : "" ?>>
-                <option value=""><?php echo get_string("v-filter-chosen"); ?></option>
+                <option value="">Chọn</option>
             <?php if (isset($list_data)) {
                 $list_option = array();
                 // process duplicate data

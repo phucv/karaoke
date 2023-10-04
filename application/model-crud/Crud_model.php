@@ -13,8 +13,6 @@
  * @property CI_Image_lib        $image_lib
  * @property CI_Loader           $load
  * @property CI_Upload           $upload
- * @property Ion_auth_model      $ion_auth
- * @property MY_Form_validation  $form_validation
  */
 class Crud_model extends CI_Model {
 

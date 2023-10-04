@@ -22,10 +22,3 @@ $hook['pre_system'][] = array(
         APPPATH . 'model-crud/',
     )
 );
-
-$hook['pre_system'][] = array(
-    'class'    => 'Custom_exception',
-    'function' => 'set_exception_handlers',
-    'filename' => 'Custom_exception.php',
-    'filepath' => 'hooks',
-);

@@ -3,19 +3,11 @@
     .tablet-login-alternate {
         display: none;
     }
-
-    .container .col-description .description-title .visible-768 {
-        display: none;
-    }
 }
 
 /*** Laptop ***/
 @media screen and (max-width: 1339px) and (min-width: 1024px) {
     .tablet-login-alternate {
-        display: none;
-    }
-
-    .container .col-description .description-title .visible-768 {
         display: none;
     }
 }
@@ -43,20 +35,8 @@
         display: none;
     }
 
-    .container .col-description {
-        width: 50%;
-    }
-
     .container .col-form {
         width: 49%;
-    }
-
-    .container .col-description ul > li > .desc-item-wrapper {
-        width: calc(100% - 76px);
-    }
-
-    .container .col-form .tab-pane .login-w-gg {
-        margin-top: 0;
     }
 
 }
@@ -91,32 +71,12 @@
         display: none;
     }
 
-    .container .col-description ul {
-        display: none;
-    }
-
-    .container .col-description .link-info {
-        display: none;
-    }
-
-    .container .col-description .description-title h3 {
-        font-size: 33px;
-    }
-
     .container .col-form {
         margin-top: 20px;
     }
 
     .tablet-login-alternate {
         display: block !important;
-    }
-
-    #google {
-        display: none;
-    }
-
-    .container .col-description {
-        width: 100%;
     }
 
     .container .col-form {
@@ -137,33 +97,6 @@
         width: 100%;
         white-space: nowrap;
         text-align: center;
-    }
-
-    /** setting for forget password */
-    .container .box-container {
-        margin-top: 120px;
-        margin: 30% auto;
-        width: 100%;
-        border: none;
-    }
-
-    .container .box-container .box-center {
-        width: 100%;
-        text-align: center;
-    }
-
-    .container .box-container h2 {
-        font-size: 25px;
-    }
-
-    .container .box-container p {
-        margin: 0 0 10px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .container .box-container .form-control {
-        width: 96%;
     }
 }
 
@@ -193,10 +126,6 @@
         margin-top: 80px;
     }
 
-    .container .col-description {
-        width: 100%;
-    }
-
     .container .col-form {
         width: 100%;
     }
@@ -205,28 +134,12 @@
         display: none;
     }
 
-    .container .col-description ul {
-        display: none;
-    }
-
-    .container .col-description .link-info {
-        display: none;
-    }
-
-    .container .col-description .description-title h3 {
-        font-size: 25px;
-    }
-
     .container .col-form {
         margin-top: 20px;
     }
 
     .tablet-login-alternate {
         display: block !important;
-    }
-
-    #google {
-        display: none;
     }
 
     .footer {
@@ -244,34 +157,6 @@
         white-space: nowrap;
         text-align: center;
     }
-
-    /** setting for forget password */
-    .container .box-container {
-        margin-top: 120px;
-        margin: 30% auto;
-        width: 100%;
-        border: none;
-    }
-
-    .container .box-container .box-center {
-        width: 100%;
-        text-align: center;
-    }
-
-    .container .box-container h2 {
-        font-size: 25px;
-    }
-
-    .container .box-container p {
-        margin: 0 0 10px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .container .box-container .form-control {
-        width: 91%;
-    }
-
 }
 
 /*** Mobile S ***/
@@ -300,10 +185,6 @@
         margin-top: 80px;
     }
 
-    .container .col-description {
-        width: 100%;
-    }
-
     .container .col-form {
         width: 100%;
     }
@@ -312,28 +193,12 @@
         display: none;
     }
 
-    .container .col-description ul {
-        display: none;
-    }
-
-    .container .col-description .link-info {
-        display: none;
-    }
-
-    .container .col-description .description-title h3 {
-        font-size: 25px;
-    }
-
     .container .col-form {
         margin-top: 20px;
     }
 
     .tablet-login-alternate {
         display: block !important;
-    }
-
-    #google {
-        display: none;
     }
 
     .footer {
@@ -350,33 +215,6 @@
         width: 100%;
         text-align: center;
         font-size: 9px;
-    }
-
-    /** setting for forget password */
-    .container .box-container {
-        margin-top: 120px;
-        margin: 30% auto;
-        width: 100%;
-        border: none;
-    }
-
-    .container .box-container .box-center {
-        width: 100%;
-        text-align: center;
-    }
-
-    .container .box-container h2 {
-        font-size: 25px;
-    }
-
-    .container .box-container p {
-        margin: 0 0 10px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .container .box-container .form-control {
-        width: 91%;
     }
 
 }

@@ -1,6 +1,3 @@
-/**
- * Created by Thieu-LM on 2/16/2017.
- */
 // Phone number validation
 // from: http://stackoverflow.com/questions/19840301/jquery-to-validate-phone-number
 $.validator.addMethod(

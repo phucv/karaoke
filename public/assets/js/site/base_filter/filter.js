@@ -1,7 +1,3 @@
-/**
- * Created by Thieu-LM on 25/03/2017.
- * library filter
- */
 var Filter = {
     data            : {
         filter      : {},

@@ -60,20 +60,10 @@ if (empty($show_menu)) return FALSE;
         ?>
     </ul>
     <ul class="nav nav-list menu_fixed">
-        <li class="menu-items">
-            <div class="language_config">
-                <a href="<?php echo site_url('site/lang_switch/switchLanguage/vi'); ?>">
-                    <img src="<?php echo base_url('assets/images/site/ico/vietnamese.png') ?>"/></a>
-                <a href="<?php echo site_url('site/lang_switch/switchLanguage/en'); ?>">
-                    <img src="<?php echo base_url('assets/images/site/ico/english.png') ?>"/></a>
-                <a href="<?php echo site_url('site/lang_switch/switchLanguage/ja'); ?>">
-                    <img style="width: 28px" src="<?php echo base_url('assets/images/site/ico/JP.png') ?>"/></a>
-            </div>
-        </li>
         <li class="menu-items <?php echo ($show_menu === 'close') ? 'show-menu' : 'hide-menu'; ?>" id="menu">
-            <a href="#" title="<?php echo get_string("v-side_bar_left-minimize_title"); ?>" class="text_parent">
+            <a href="#" title="Đóng/mở menu" class="text_parent">
                 <i class="material-icons item-icons"><?php echo ($show_menu === 'close') ? 'fast_forward' : 'fast_rewind'; ?></i>
-                <span class="item-text"><?php echo get_string("v-side_bar_left-minimize"); ?></span>
+                <span class="item-text">Thu gọn menu</span>
             </a>
         </li>
     </ul>

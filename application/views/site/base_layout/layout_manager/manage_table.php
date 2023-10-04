@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: Thieu-LM
- * Date: 3/1/2017
- * Time: 6:52 PM
- */
-?>
 <span class="content-table">
 <!--  Row       -->
     <?php
@@ -13,7 +5,7 @@
         foreach ($record_list_data as $record_data) {
             $id = $record_data->id;
             $public = isset($record_data->public) ? $record_data->public : NULL;
-            $fullname = "Luong Minh Thieu";
+            $fullname = "PhuCV";
             $file_type = empty($record_data->file_type) ? "No file" : $record_data->file_type;
             $file_link = "Link";
             $row_name = "Name";
@@ -90,10 +82,10 @@
             <?php
         }
     } else {
-        echo "<div class='no-record'>" . get_string("v-manage_table-no_record") . "</div>";
+        echo "<div class='no-record'>Không có bản ghi thỏa mãn.</div>";
     }
     ?>
     </span>
 <div class="load-more">
-    <span class="view-more hidden"><?php echo get_string("v-manage_table-load_more")?></span>
+    <span class="view-more hidden">Đang tải thêm</span>
 </div>

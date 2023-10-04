@@ -1,1 +1,0 @@
-<?php echo minify_css_js("js", array("assets/js/site/notification.js", "assets/js/site/messenger/notify_mess.js"), "base_notify.js"); ?>

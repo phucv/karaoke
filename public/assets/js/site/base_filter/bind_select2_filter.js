@@ -1,11 +1,3 @@
-/**
- * Created by Pham Quynh on 12/25/2018.
- */
-/**
- * select2 filter user
- * @param objParent
- * @param open
- */
 function bindSelect2FilterData(objParent, open) {
     try {
         let url = objParent.find("select.select2").attr("data-url-ajax");

@@ -1,0 +1,46 @@
+.btn-action {
+    border: 1px solid #0a9d57;
+    border-radius: 4px;
+    color: #0a9d57;
+    padding: 2px 5px;
+}
+
+.btn-action:hover {
+    cursor: pointer;
+    background: #0a9d57;
+    color: #fff;
+}
+
+.modal-dialog {
+    width: 900px;
+}
+
+.pay_content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.pay_content table th, .pay_content table td {
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+}
+
+.pay_content .remove_product {
+    font-size: 10px;
+    border: 1px solid red;
+    color: red;
+    border-radius: 50%;
+    right: 5px;
+    top: 5px;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+}
+
+.pay_content table tr:hover .remove_product {
+    display: initial;
+}
+
+.select2-container{
+    width: 300px !important;
+}

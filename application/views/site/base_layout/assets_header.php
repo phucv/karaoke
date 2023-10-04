@@ -42,12 +42,6 @@
 <!-- LIBRARY CKEDITOR -->
 <script src="<?php echo base_url("assets/plugins-bower/ckeditor/ckeditor.js"); ?>"></script>
 
-<!-- LIBRARY IONRANGESLIDER -->
-<link rel="stylesheet" href="<?php echo base_url("assets/plugins/ionRangeSlider/css/ion.rangeSlider.css"); ?>"/>
-<link rel="stylesheet"
-      href="<?php echo base_url("assets/plugins/ionRangeSlider/css/ion.rangeSlider.skinNice.css"); ?>"/>
-<script src="<?php echo base_url("assets/plugins/ionRangeSlider/js/ion.rangeSlider.min.js"); ?>"></script>
-
 <?php
 $base_css = array(
     "assets/css/site/modal.css",
@@ -56,8 +50,6 @@ $base_css = array(
     "assets/css/site/layout.css",
     "assets/css/site/header.css",
     "assets/css/site/side_bar.css",
-    "assets/css/site/image.css",
-    "assets/css/site/notify_minimize.css",
 );
 $base_js = array(
     "assets/js/site/modal.js",

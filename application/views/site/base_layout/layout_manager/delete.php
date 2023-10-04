@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Thieu-LM
- * Date: 2/24/2017
- * Time: 10:26 AM
- */
 if (!empty($load_more_css)) {
     echo minify_css_js('css', $load_more_css, isset($function) ? $function : NULL);
 }
@@ -20,7 +14,7 @@ if (!empty($load_more_js)) {
             <div class="modal-header">
                 <span class="header-title">
                     <i class="material-icons">warning</i>
-                    <span><?php echo get_string("v-delete-title_text"); ?></span>
+                    <span>Xóa dữ liệu</span>
                 </span>
                 <span class="close" data-dismiss="modal" aria-label="Close">
                     <img src="<?php echo base_url('assets/images/site/base_manager/icon-remove.png') ?>"/>
@@ -34,17 +28,17 @@ if (!empty($load_more_js)) {
                         echo '<input type="hidden" name="id[]" value="'.$record_id.'"/>';
                     }
                 }?>
-                <?php echo get_string("v-delete_many-content", count($record_list)); ?>
+                <?php echo "Bạn chắc chắn muốn xóa  <b>" . count($record_list) . "</b> bản ghi đã chọn không?"; ?>
             </div>
             <div class="modal-footer">
                 <div class="form-row row-btn">
                     <button class="btn btn-save e-btn-save" type="submit">
                         <img src="<?php echo base_url('assets/images/site/base_manager/btn-save.png'); ?>"/>
-                        <span><?php echo get_string("v-delete-btn_save"); ?></span>
+                        <span>Xóa</span>
                     </button>
                     <span class="btn btn-cancel" data-dismiss="modal">
                         <i class="material-icons">close</i>
-                        <span><?php echo get_string("v-delete-btn_cancel"); ?></span>
+                        <span>Hủy</span>
                     </span>
                 </div>
             </div>

@@ -1,11 +1,3 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: Thieu-LM
- * Date: 2/21/2017
- * Time: 10:05 AM
- */
-?>
 <div class="manage-filter"
      limit-df="<?php echo isset($default_limit) ? $default_limit : 10; ?>"
      offset-df="<?php echo isset($default_offset) ? $default_offset : 0; ?>">

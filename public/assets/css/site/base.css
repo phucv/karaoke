@@ -52,17 +52,6 @@ ul {
     src: url("../../fonts/Open_Sans/OpenSans-Semibold.ttf");
 }
 
-/*SFUBembo*/
-@font-face {
-    font-family: SFUBemboMedium;
-    src: url("../../fonts/SFU_Bembo/SFUBemboMedium.ttf");
-}
-
-@font-face {
-    font-family: SFUBemboBold;
-    src: url("../../fonts/SFU_Bembo/SFUBemboBold.ttf");
-}
-
 /*****************Base style***********************/
 .hidden {
     display: none;
@@ -1161,3 +1150,38 @@ div .font-size-13 {
 }
 
 /*endregion*/
+
+.icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+}
+
+.icon img {
+    width: 100%;
+}
+
+.drop-down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 9px solid #9b9b9b;
+    position: absolute;
+    top: 45%;
+    right: 10%;
+}
+
+.drop-up-arrow {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 9px solid #9b9b9b;
+    position: absolute;
+    top: 45%;
+    right: 10%;
+}

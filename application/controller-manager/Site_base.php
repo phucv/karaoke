@@ -1,12 +1,4 @@
 <?php
-
-/**
- * Created by IntelliJ IDEA.
- * User: Thieu-LM
- * Date: 14/04/2017
- * Time: 9:25 PM
- *
- */
 abstract class Site_base extends Site_layout {
 
     protected $_data_condition_default = array(
@@ -26,8 +18,6 @@ abstract class Site_base extends Site_layout {
                 $key => "desc",
             );
         }
-        // Load lang
-        $this->lang->load(array('site/site_base'));
     }
     var $paging_item_display = 7;
 
@@ -69,20 +59,20 @@ abstract class Site_base extends Site_layout {
         $data["more_js"] = empty($data["more_js"]) ? array() : $data["more_js"];
         $setting_view = $this->_settings["view"];
         if (file_exists("assets/css/" . $setting_view . "/manage.css")) {
-            $this->load_more_css("assets/css/" . $setting_view . "/manage.css", FALSE, TRUE, 'base_manager');
+            $this->load_more_css("assets/css/" . $setting_view . "/manage.css");
         } else {
-            $this->load_more_css("assets/css/site/base_manager/manage.css", FALSE, TRUE, 'base_manager.css');
+            $this->load_more_css("assets/css/site/base_manager/manage.css");
         }
         if (file_exists("assets/js/" . $setting_view . "/manage.js")) {
-            $this->load_more_js("assets/js/" . $setting_view . "/manage.js", FALSE, TRUE, 'base_manager');
+            $this->load_more_js("assets/js/" . $setting_view . "/manage.js");
         } else {
-            $this->load_more_js("assets/js/site/base_manager/manage.js", FALSE, TRUE, 'base_manager.js');
+            $this->load_more_js("assets/js/site/base_manager/manage.js");
         }
         if (!empty($data["more_css"])) {
-            $this->load_more_css($data["more_css"], FALSE, TRUE);
+            $this->load_more_css($data["more_css"]);
         }
         if (!empty($data["more_js"])) {
-            $this->load_more_js($data["more_js"], FALSE, TRUE);
+            $this->load_more_js($data["more_js"]);
         }
     }
 
@@ -91,14 +81,14 @@ abstract class Site_base extends Site_layout {
         $setting_view = $this->_settings["view"];
         // title for manager
         if (empty($data["title"])) {
-            $this->data["title"] = get_string("c-index-title") . " " . $this->_settings["object"];
+            $this->data["title"] = "Quản lý " . $this->_settings["object"];
         } else {
             $this->data["title"] = $data["title"];
         }
         // breadcrumb
         if (empty($data['breadcrumb'])) $data['breadcrumb'] = '';
         $data["title"] = $this->data["title"];
-        $data["object_class"] = $this->_settings["object"];
+        $data["object_class"] = empty($this->_settings["object"]) ? "" : $this->_settings["object"];
         // url for ajax
         $data["url_add"] = site_url($this->_url_action["add"]);
         $data["url_ajax_data_table"] = site_url($this->_url_action["ajax_data_table"]);
@@ -248,16 +238,6 @@ abstract class Site_base extends Site_layout {
         return $data_return;
     }
 
-    protected function _get_paging($total, $current, $display, $link, $key = "p") {
-        $data["total_page"] = $total;
-        $data["current_page"] = $current;
-        $data["page_link_display"] = $display;
-        $data["link"] = $link;
-
-        $data["key"] = $key;
-        return $this->load->view("site/base_layout/layout_manager/paging", $data, true);
-    }
-
     /**
      * SET PUBLIC/PRIVATE
      */
@@ -268,7 +248,7 @@ abstract class Site_base extends Site_layout {
         if (!$this->model->get($id)) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => get_string("c-change_status-no_record"),
+                "msg"    => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -281,14 +261,14 @@ abstract class Site_base extends Site_layout {
         if ($status || $status === 0) {
             $return_data = array(
                 "status" => 1,
-                "msg"    => get_string("c-change_status-success"),
+                "msg"    => "Cập nhật trạng thái thành công!",
             );
             echo json_encode($return_data);
             return FALSE;
         } else {
             $return_data = array(
                 "status" => 0,
-                "msg"    => get_string("c-change_status-fail"),
+                "msg"    => "Cập nhật trạng thái thất bại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -333,7 +313,7 @@ abstract class Site_base extends Site_layout {
         if (!$data_post) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => get_string("c-delete-no_record"),
+                "msg"    => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -343,7 +323,7 @@ abstract class Site_base extends Site_layout {
         if (!$record_list) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => get_string("c-delete-no_record"),
+                "msg"    => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -368,7 +348,7 @@ abstract class Site_base extends Site_layout {
         if (!$data_post) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => get_string("c-delete-no_record"),
+                "msg"    => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -382,58 +362,17 @@ abstract class Site_base extends Site_layout {
         if ($delete_count) {
             $return_data = array(
                 "status" => 1,
-                "msg"    => get_string("c-delete_many-success", $delete_count),
+                "msg"    => "Xóa thành công <b>$delete_count</b> dữ liệu!",
             );
             echo json_encode($return_data);
             return TRUE;
         } else {
             $return_data = array(
                 "status" => 0,
-                "msg"    => get_string("c-delete-fail"),
+                "msg"    => "Xóa dữ liệu thất bại!",
             );
             echo json_encode($return_data);
             return FALSE;
         }
-    }
-
-    /**
-     * custom order for class
-     *
-     * @param string $order
-     *
-     * @return string
-     */
-    public function custom_order($order = "") {
-        if (is_numeric($order)) {
-            if ($order < 10) {
-                $order = "00" . $order;
-            } elseif ($order >= 10 && $order < 100) {
-                $order = "0" . $order;
-            }
-        }
-        return $order;
-    }
-
-    public function get_class_fullname($name = "", $order = "") {
-        $order = $this->custom_order($order);
-        $fullname = $name . $order;
-        return $fullname;
-    }
-
-    /**
-     * QuynhPN: 23/01/2018 custom name of class(name + order)
-     *
-     * @param int $class_id
-     *
-     * @return bool|string
-     */
-    public function custom_name_class($class_id = 0) {
-        $this->load->model("M_class", "class");
-        $class = $this->class->get($class_id);
-        if (!empty($class)) {
-            $name = $this->_custom_name_class($class->name, $class->order);
-            return $name;
-        }
-        return FALSE;
     }
 }

@@ -1,7 +1,5 @@
 $(document).ready(function (e) {
     // Get value for limit / offset
-    let textLang = $("#i_language");
-    let weekDay = textLang.length ? textLang.attr("data-weekday").split(',') : "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday";
     var limitDefault = $(".manage-filter").attr("limit-df");
     limitDefault = parseInt(limitDefault);
     var offsetDefault = $(".manage-filter").attr("offset-df");
@@ -258,7 +256,6 @@ function resizeTable(objTable) {
 }
 
 /**
- * ThieuLM: load content when scroll reach DIV bottom
  * http://stackoverflow.com/questions/21219283/jquery-lazy-load-content-in-div
  */
 function loadMoreContent(obj) {

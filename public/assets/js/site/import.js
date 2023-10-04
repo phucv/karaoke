@@ -1,6 +1,3 @@
-/**
- * Created by marverlous on 03/07/2017.
- */
 $(document).ready(function () {
    $('.import-file').on('click', function(e){
        $('#importModal').css('display','block');
