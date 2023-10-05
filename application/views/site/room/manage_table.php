@@ -12,7 +12,7 @@
                     <span class="info-name" title="<?php echo $row_name; ?>">
                         <?php echo $row_name; ?>
                         <a class="btn-edit hidden e_ajax_link"
-                           href="<?php echo isset($url_add) ? $url_add . "/" . $id : ''; ?>"></a>
+                           href="<?php echo isset($url_edit) ? $url_edit . "/" . $id : ''; ?>"></a>
                     </span>
                     <span class="info-other">
                         <span class="info-other-left">

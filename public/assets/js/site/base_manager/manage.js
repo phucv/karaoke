@@ -332,6 +332,26 @@ function appendDataTable(data, obj) {
     }
 }
 
+// Callback for load more
+function appendDataTableReport(data, obj) {
+    if (data.status != undefined && data.status == 0) {
+        notify(data.msg, "alert-danger");
+    } else {
+        let ajaxContentTableObj = $($.parseHTML(data.html)).filter(".manager-report").find("tbody");
+        if (ajaxContentTableObj.find(".e_row").length) {
+            obj.find(".ajax-data-table .manager-report tbody.tbody").append(ajaxContentTableObj.html());
+        } else {
+            // set isMaxOffset
+            loadMore.data.isMaxOffset = true;
+        }
+        let viewMore = obj.find(".ajax-data-table").find(".load-more .view-more");
+        viewMore.addClass("hidden", 300);
+        if (data.msg != undefined) {
+            notify(data.msg, "alert-success");
+        }
+    }
+}
+
 //Callback when change status
 function callbackChangeStatus(obj, data) {
     if (data.status == 1) {

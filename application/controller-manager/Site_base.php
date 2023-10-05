@@ -1,9 +1,10 @@
 <?php
+
 abstract class Site_base extends Site_layout {
 
     protected $_data_condition_default = array(
-        "limit"    => 30,
-        "offset"   => 0,
+        "limit" => 12,
+        "offset" => 0,
         "order_by" => NULL,
     );
 
@@ -19,35 +20,34 @@ abstract class Site_base extends Site_layout {
             );
         }
     }
-    var $paging_item_display = 7;
 
     /**
-     * ThieuLM - 23042017: Abstract function for setting
+     * Abstract function for setting
      *
      * @return mixed
      */
     abstract function setting_base();
 
     /**
-     * ThieuLM - 23042017: setting for url action
+     * setting for url action
      */
     public function setting_url() {
         $class = $this->_settings["class"];
         $this->_url_action = array(
-            "add"             => $class . "/add",
-            "add_save"        => $class . "/add_save",
-            "edit"            => $class . "/edit",
+            "add" => $class . "/add",
+            "add_save" => $class . "/add_save",
+            "edit" => $class . "/edit",
             "ajax_data_table" => $class . "/ajax_data_table",
-            "detail"          => $class . "/detail",
-            "delete"          => $class . "/delete",
-            "delete_many"     => $class . "/delete",
-            "delete_save"     => $class . "/delete_save",
-            "change_status"   => $class . "/change_status",
+            "detail" => $class . "/detail",
+            "delete" => $class . "/delete",
+            "delete_many" => $class . "/delete",
+            "delete_save" => $class . "/delete_save",
+            "change_status" => $class . "/change_status",
         );
     }
 
     /**
-     * ThieuLM - 23042017: method view list data
+     * method view list data
      */
     public function index() {
         $data = array();
@@ -107,7 +107,7 @@ abstract class Site_base extends Site_layout {
     public function ajax_data_table($data = array()) {
         if (!$this->input->is_ajax_request()) return FALSE;
         $data_condition = $this->input->post();
-        $data = $this->_get_data($data);
+        $data = $this->get_data($data);
         // get url for href
         $data["url_change_status"] = site_url($this->_url_action["change_status"]);
         $data["url_edit"] = site_url($this->_url_action["edit"]);
@@ -120,10 +120,10 @@ abstract class Site_base extends Site_layout {
             $content_table = $this->load->view("site/base_layout/layout_manager/manage_table", $data, TRUE);
         }
         $data_return = array(
-            "status"      => 1,
+            "status" => 1,
             "status_code" => "SUCCESS",
-            "count"       => $data["count_record_list_data"],
-            "html"        => $content_table,
+            "count" => $data["count_record_list_data"],
+            "html" => $content_table,
         );
         if (!empty($data_condition["callback"])) {
             $data_return["callback"] = $data_condition["callback"];
@@ -132,7 +132,7 @@ abstract class Site_base extends Site_layout {
         return TRUE;
     }
 
-    protected function _get_data($data = []){
+    public function get_data($data = []) {
         if (!$this->input->is_ajax_request()) return FALSE;
         $data_condition = $this->input->post();
         $list_condition = $this->_process_data_condition($data_condition);
@@ -156,13 +156,15 @@ abstract class Site_base extends Site_layout {
 
     /**
      * Process data condition
+     * @param $data_condition
+     * @return array
      */
     protected function _process_data_condition($data_condition) {
         if (empty($data_condition)) {
             $field_id = $this->model->get_primary_key();
             $data_return = array(
-                "limit"    => $this->_data_condition_default["limit"],
-                "offset"   => $this->_data_condition_default["offset"],
+                "limit" => $this->_data_condition_default["limit"],
+                "offset" => $this->_data_condition_default["offset"],
                 "order_by" => array($field_id => "DESC"),
             );
         } else {
@@ -248,7 +250,7 @@ abstract class Site_base extends Site_layout {
         if (!$this->model->get($id)) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => "Dữ liệu không tồn tại!",
+                "msg" => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -261,14 +263,14 @@ abstract class Site_base extends Site_layout {
         if ($status || $status === 0) {
             $return_data = array(
                 "status" => 1,
-                "msg"    => "Cập nhật trạng thái thành công!",
+                "msg" => "Cập nhật trạng thái thành công!",
             );
             echo json_encode($return_data);
-            return FALSE;
+            return TRUE;
         } else {
             $return_data = array(
                 "status" => 0,
-                "msg"    => "Cập nhật trạng thái thất bại!",
+                "msg" => "Cập nhật trạng thái thất bại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -276,11 +278,11 @@ abstract class Site_base extends Site_layout {
     }
 
     /**
-     * PhuCV - Get list item for select
+     * Get list item for select
      * @return bool
      */
     public function list_select() {
-        $data = $this->_get_data();
+        $data = $this->get_data();
         if (!empty($data["record_list_data"])) {
             foreach ($data["record_list_data"] as $record) {
                 $record->name = isset($record->name) ? $record->name : $record->id;
@@ -293,7 +295,7 @@ abstract class Site_base extends Site_layout {
     }
 
     public function list_select_id() {
-        $data = $this->_get_data();
+        $data = $this->get_data();
         if (!empty($data["record_list_data"])) {
             foreach ($data["record_list_data"] as $record) {
                 $record->name = !empty($record->name) ? $record->name : $record->id;
@@ -313,7 +315,7 @@ abstract class Site_base extends Site_layout {
         if (!$data_post) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => "Dữ liệu không tồn tại!",
+                "msg" => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -323,7 +325,7 @@ abstract class Site_base extends Site_layout {
         if (!$record_list) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => "Dữ liệu không tồn tại!",
+                "msg" => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -337,7 +339,7 @@ abstract class Site_base extends Site_layout {
         }
         $return_data = array(
             "status" => 1,
-            "html"   => $content,
+            "html" => $content,
         );
         echo json_encode($return_data);
         return TRUE;
@@ -348,7 +350,7 @@ abstract class Site_base extends Site_layout {
         if (!$data_post) {
             $return_data = array(
                 "status" => 0,
-                "msg"    => "Dữ liệu không tồn tại!",
+                "msg" => "Dữ liệu không tồn tại!",
             );
             echo json_encode($return_data);
             return FALSE;
@@ -362,14 +364,14 @@ abstract class Site_base extends Site_layout {
         if ($delete_count) {
             $return_data = array(
                 "status" => 1,
-                "msg"    => "Xóa thành công <b>$delete_count</b> dữ liệu!",
+                "msg" => "Xóa thành công <b>$delete_count</b> dữ liệu!",
             );
             echo json_encode($return_data);
             return TRUE;
         } else {
             $return_data = array(
                 "status" => 0,
-                "msg"    => "Xóa dữ liệu thất bại!",
+                "msg" => "Xóa dữ liệu thất bại!",
             );
             echo json_encode($return_data);
             return FALSE;

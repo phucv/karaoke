@@ -113,8 +113,7 @@ a:active {
 }
 
 
-.center,
-.align-center {
+.center, .align-center {
     text-align: center !important;
 }
 

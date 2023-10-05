@@ -24,6 +24,11 @@ class Room extends Site_base {
         $this->manager($data);
     }
 
+    public function get_data($data = []) {
+        $this->_url_action["edit"] = 'room/add';
+        return parent::get_data($data);
+    }
+
     protected function _get_schema() {
         return ["m.name"];
     }
@@ -111,5 +116,15 @@ class Room extends Site_base {
         $return_data["callback"] = "defaultCallbackSubmit";
         echo json_encode($return_data);
         return TRUE;
+    }
+
+    public function change_status() {
+        $status = parent::change_status();
+        $public = $this->input->post("public");
+        if (!$public && $status) {
+            $id = $this->input->post("id");
+            $status = $this->model->update($id, array("status" => 0, 'time_enter' => NULL));
+        }
+        return $status;
     }
 }

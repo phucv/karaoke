@@ -277,9 +277,10 @@ function defaultCallbackSubmit(form, data) {
  * init height screen
  */
 function initHeight() {
-    var height = $(".wrapper-content-layout").height();
-    $(".wrapper-content-layout").addClass("height-max");
-    $(".wrapper-content-layout").css("min-height", height);
+    let wrapperContent = $(".wrapper-content-layout");
+    let height = wrapperContent.height();
+    wrapperContent.addClass("height-max");
+    wrapperContent.css("min-height", height);
 }
 
 function formatMoney(n, c, d, t) {
@@ -291,4 +292,4 @@ function formatMoney(n, c, d, t) {
         j = (j = i.length) > 3 ? j % 3 : 0;
 
     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-};
+}

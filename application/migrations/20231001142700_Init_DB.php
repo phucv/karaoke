@@ -1,13 +1,6 @@
 <?php
 
 /**
- * Created by IntelliJ IDEA.
- * User: thieulm
- * Date: 24/04/2018
- * Time: 14:27 AM
- */
-
-/**
  * Class Migration_Init
  *
  * @property CI_DB_query_builder $db

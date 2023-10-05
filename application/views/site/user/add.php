@@ -1,7 +1,7 @@
 <?php
 $id = isset($record_data->id) ? $record_data->id : "";
 $roles = empty($roles) ? [] : $roles;
-$role_id = empty($record_data->role_id) ? 2 : $record_data->role_id;
+$role_id = empty($record_data->role_id) ? 0 : $record_data->role_id;
 ?>
 <div class="modal-dialog">
     <div class="modal-content e_modal_content">
@@ -28,7 +28,8 @@ $role_id = empty($record_data->role_id) ? 2 : $record_data->role_id;
                     <div class="form-row">
                         <label class="row-label">Quyền<span class="red">*</span>:</label>
                         <div class="row-input">
-                            <select class="site-select2" name="role_id" required>
+                            <select class="site-select2" name="role_id" required data-placeholder="Chọn quyền">
+                                <option></option>
                                 <?php foreach ($roles as $role) {
                                     $selected = $role_id == $role->id ? "selected" : "";
                                     echo "<option $selected value='$role->id'>$role->name</option>";

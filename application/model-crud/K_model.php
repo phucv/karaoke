@@ -138,7 +138,6 @@ class K_model extends Crud_model {
     }
 
     /**
-     * ThieuLM: 20/04/2017
      * Init default create
      *
      * @param $row array
@@ -163,7 +162,6 @@ class K_model extends Crud_model {
     }
 
     /**
-     * ThieuLM: 20/04/2017
      * Init default update
      *
      * @param $row array
@@ -182,7 +180,6 @@ class K_model extends Crud_model {
     }
 
     /**
-     * PhuCV: 04/06/2019
      * Init default delete
      *
      * @param $row array

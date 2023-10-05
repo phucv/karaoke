@@ -41,7 +41,7 @@ abstract class Site_login_layout extends Base_layout {
     }
 
     /**
-     * MinhNV: 30/01/2018 to check and convert vietnamese string to non-signed Vietnamese
+     * check and convert vietnamese string to non-signed Vietnamese
      *
      * @param $str
      *

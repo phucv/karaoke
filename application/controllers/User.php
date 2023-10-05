@@ -25,6 +25,11 @@ class User extends Site_base {
         $this->manager($data);
     }
 
+    public function get_data($data = []) {
+        $this->_url_action["edit"] = 'user/add';
+        return parent::get_data($data);
+    }
+
     protected function _get_schema() {
         return ["m.display_name", "m.username"];
     }

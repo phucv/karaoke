@@ -190,7 +190,7 @@ function updateWrapperLayoutHeight() {
 }
 
 /**
- * ThieuLM: resize container when ready
+ * resize container when ready
  */
 function resizeContainer() {
     let sideMenu = $('.side-menu');
@@ -201,7 +201,7 @@ function resizeContainer() {
 }
 
 /**
- * ThieuLM: active parent menu of information menu
+ * active parent menu of information menu
  */
 function activeInfoMenu() {
     var subListItem = $(".information-menu .sub-list-item");

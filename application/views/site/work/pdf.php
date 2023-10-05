@@ -87,7 +87,7 @@ $products = empty($products) ? [] : $products;
                     <td class="center"><?php echo $k++;?></td>
                     <td><?php echo !empty($products[$product_id]->name) ? $products[$product_id]->name : "Phòng hát"; ?></td>
                     <td><?php echo !empty($products[$product_id]->unit) ? $products[$product_id]->unit : "giờ"; ?></td>
-                    <td class="right"><?php echo $bill_detail['quantity']?></td>
+                    <td class="right"><?php echo empty($products[$product_id]->unit) ? number_format($bill_detail['quantity'], 1, ',', '.') : $bill_detail['quantity']; ?></td>
                     <td class="right"><?php echo number_format($bill_detail['price'], 0, ',', '.'); ?></td>
                     <td class="right"><?php echo number_format($bill_detail['value_total'], 0, ',', '.'); ?></td>
                 </tr>

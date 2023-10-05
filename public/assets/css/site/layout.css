@@ -49,7 +49,6 @@
     z-index: 9 !important;
 }
 
-/*region**********ThieuLM-10052017 Css for enscroll*********************/
 .vertical-track,
 .horizontal-track {
     width: 4px;
@@ -64,7 +63,6 @@
     border-radius: 4px;
 }
 
-/*endregion ThieuLM*/
 /*Overwrite select 2*/
 .select2-container {
 

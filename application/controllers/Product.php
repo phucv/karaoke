@@ -34,6 +34,11 @@ class Product extends Site_base {
         );
     }
 
+    public function get_data($data = []) {
+        $this->_url_action["edit"] = 'product/add';
+        return parent::get_data($data);
+    }
+
     protected function _get_part_filter($filter_view_folder) {
         $part = [];
         $part["row-1"] = array(

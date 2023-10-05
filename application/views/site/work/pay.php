@@ -76,8 +76,8 @@ $products = empty($products) ? [] : $products;
                     <div class="form-row">
                         <label class="row-label">Thêm sản phẩm sử dụng:</label>
                         <div class="row-input">
-                            <select class="site-select2 e_chosen_product">
-                                <option value=0>Chọn sản phẩm</option>
+                            <select class="site-select2 e_chosen_product" data-placeholder="Chọn sản phẩm">
+                                <option></option>
                                 <?php foreach ($products as $product) {
                                     echo "<option value='$product->id' data-name='$product->name' data-unit='$product->unit' data-price='$product->price'>$product->name</option>";
                                 } ?>

@@ -32,29 +32,11 @@ class Work extends Site_base {
     }
 
 
-    protected function _get_data($data = []){
-        if (!$this->input->is_ajax_request()) return FALSE;
-        $data_condition = $this->input->post();
-        $list_condition = $this->_process_data_condition($data_condition);
-        // set condition
-        $limit = isset($list_condition["limit"]) ? $list_condition["limit"] : $this->_data_condition_default["limit"];
-        $offset = isset($list_condition["offset"]) ? $list_condition["offset"] : $this->_data_condition_default["limit"];
-        $order_by = isset($list_condition["order_by"]) ? $list_condition["order_by"] : $this->_data_condition_default["order_by"];
-
-        $where_condition = isset($list_condition["where"]) ? $list_condition["where"] : array();
-        $wherein_condition = isset($list_condition["wherein"]) ? $list_condition["wherein"] : array();
-        $like_condition = isset($list_condition["like"]) ? $list_condition["like"] : array();
-        $where_condition['public'] = 1;
-        // Get data material
-        $record_list_data = $this->model->get_list_filter($where_condition, $wherein_condition, $like_condition, $limit, $offset, $order_by);
-        $count_record_list_data = $this->model->get_list_filter_count($where_condition, $wherein_condition, $like_condition);
+    public function get_data($data = []) {
+        $data = parent::get_data($data);
         $data["url_enter_room"] = site_url('work/enter_room');
         $data["url_pay"] = site_url('work/pay');
         $data["url_change_room"] = site_url('work/change_room');
-        $data["limit"] = $limit;
-        $data["offset"] = $offset;
-        $data["record_list_data"] = $record_list_data;
-        $data["count_record_list_data"] = $count_record_list_data;
         return $data;
     }
 
@@ -222,6 +204,7 @@ class Work extends Site_base {
         echo json_encode($return_data);
         return TRUE;
     }
+
     private function _export_pdf($data_bill, $bill_details, $product_ids, $pdfFilePath) {
         $data = [
             "data_bill" => $data_bill,
@@ -236,17 +219,17 @@ class Work extends Site_base {
 
         //export pdf
         $pdf = new \Mpdf\Mpdf([
-            'mode'              => "",    // mode - default ''
-            "format"            => 'A4-P',    // format - A4, for example, default ''
+            'mode' => "",    // mode - default ''
+            "format" => 'A4-P',    // format - A4, for example, default ''
             "default_font_size" => 0,     // font size - default 0
-            "default_font"      => '',    // default font family
-            "margin_right"      => 15,    // margin_left
-            "margin_left"       => 15,    // margin right
-            "margin_top"        => 16,    // margin top
-            "margin_bottom"     => 16,    // margin bottom
-            "margin_header"     => 9,     // margin header
-            "margin_footer"     => 9,     // margin footer
-            'orientation'       => 'P'    // L - landscape, P - portrait
+            "default_font" => '',    // default font family
+            "margin_right" => 15,    // margin_left
+            "margin_left" => 15,    // margin right
+            "margin_top" => 16,    // margin top
+            "margin_bottom" => 16,    // margin bottom
+            "margin_header" => 9,     // margin header
+            "margin_footer" => 9,     // margin footer
+            'orientation' => 'P'    // L - landscape, P - portrait
         ]);
         //generate the PDF from the given html
         $pdf->simpleTables = TRUE;
@@ -255,5 +238,69 @@ class Work extends Site_base {
 
         //download it.
         $pdf->Output($pdfFilePath, "F");
+    }
+
+    public function change_room() {
+        $id = $this->input->post("id");
+        $data_return = [
+            "status" => 0,
+        ];
+        $room = $this->model->get_by(["id" => $id, "status" => 1]);
+        if (!$room) {
+            $data_return['msg'] = "Phòng không hợp lệ vui lòng thử lại sau.";
+            echo json_encode($data_return);
+            return TRUE;
+        }
+        $room_change = $this->model->get_many_by(["id !=" => $id, "status" => 0, 'public' => 1]);
+        if (empty($room_change)) {
+            $data_return['msg'] = "Không còn phòng trống để chuyển.";
+            echo json_encode($data_return);
+            return TRUE;
+        }
+        $data["room"] = $room;
+        $data["rooms"] = $room_change;
+        $data["url_change_room_save"] = site_url("work/change_room_save");
+        $content = $this->load->view("site/work/change_room", $data, TRUE);
+        $data_return = array(
+            "status" => "1",
+            "html" => $content,
+        );
+        echo json_encode($data_return);
+        return TRUE;
+    }
+
+    public function change_room_save() {
+        $data_return = [
+            "status" => 0,
+        ];
+        $id = $this->input->post("id");
+        $room = $this->model->get_by(["id" => $id, "status" => 1]);
+        if (!$room) {
+            $data_return['msg'] = "Phòng cần chuyển không hợp lệ.";
+            echo json_encode($data_return);
+            return TRUE;
+        }
+        $room_change_id = $this->input->post("room_change_id");
+        $room_change = $this->model->get_by(["id" => $room_change_id, "status" => 0, 'public' => 1]);
+        if (!$room_change) {
+            $data_return['msg'] = "Phòng chuyển đến không hợp lệ.";
+            echo json_encode($data_return);
+            return TRUE;
+        }
+        $this->db->trans_begin();
+        $status = $this->model->update($id, ['status' => 0, "time_enter" => NULL]);
+        $status_change = $this->model->update($room_change_id, ['status' => 1, "time_enter" => $room->time_enter]);
+        if (!$status || !$status_change) {
+            $this->db->trans_rollback();
+            $data_return['msg'] = "Đã có lỗi xảy ra. Vui lòng thử lại";
+            echo json_encode($data_return);
+            return TRUE;
+        }
+        $this->db->trans_complete();
+        $return_data["status"] = 1;
+        $return_data["msg"] = "Chuyển phòng thành công";
+        $return_data["callback"] = "defaultCallbackSubmit";
+        echo json_encode($return_data);
+        return TRUE;
     }
 }

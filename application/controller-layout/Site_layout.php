@@ -68,7 +68,7 @@ abstract class Site_layout extends Base_layout {
     }
 
     /**
-     * QuynhPN: 16/01/2018 override _set_top_bar to add button Join for live class
+     * override _set_top_bar to add button Join for live class
      */
     protected function _set_top_bar() {
         $user_id = $this->session->userdata("id");
@@ -364,7 +364,7 @@ abstract class Site_layout extends Base_layout {
     }
 
     /**
-     * ThieuLM: overwrite show_page_blank: add data show_menu
+     * overwrite show_page_blank: add data show_menu
      */
     protected function show_page_blank($content) {
         $data["show_menu"] = $this->show_menu;

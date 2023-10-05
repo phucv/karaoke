@@ -33,7 +33,7 @@ $id = isset($record_data->id) ? $record_data->id : "";
                     <div class="form-row">
                         <label class="row-label">Đơn vị bán:</label>
                         <div class="row-input">
-                            <input type="number" name="unit" value="<?php echo empty($record_data->unit) ? '' : $record_data->unit; ?>"
+                            <input type="text" name="unit" value="<?php echo empty($record_data->unit) ? '' : $record_data->unit; ?>"
                                    placeholder="chai, thùng, gói, đĩa....">
                         </div>
                     </div>

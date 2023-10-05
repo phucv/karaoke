@@ -1,0 +1,23 @@
+.manage-content .table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-size: 13px;
+    width: calc(100% - 20px);
+    margin: 5px auto;
+}
+
+.manage-content .table .thead {
+    height: 10px;
+    background-color: #f5f6fa;
+}
+.manage-content .table th {
+    text-align: center;
+    font-family: "OpenSans-Semibold";
+    background-color: #f5f6fa;
+}
+.manage-content .table th, .manage-content .table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-weight: normal;
+    word-wrap: break-word;
+}
