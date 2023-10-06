@@ -3,6 +3,7 @@
 /**
  * Class Product
  * @property M_product model
+ * @property K_Excel k_excel
  */
 class Product extends Site_base {
 
@@ -19,7 +20,10 @@ class Product extends Site_base {
             'title' => 'Quản lý sản phẩm',
             'more_css' => [
                 'assets/css/site/modal.css'
-            ]
+            ],
+            'more_js' => [
+                'assets/js/site/import.js'
+            ],
         ];
         $this->manager($data);
     }
@@ -115,6 +119,37 @@ class Product extends Site_base {
         $return_data["msg"] = $id ? "Cập nhật thành công" : "Thêm mới thành công";
         $return_data["callback"] = "defaultCallbackSubmit";
         echo json_encode($return_data);
+        return TRUE;
+    }
+
+    public function import_file() {
+        $dataReturn = array();
+        if (!empty($_FILES['file'])) {
+            $this->load->library("K_Excel");
+            $data_import = $this->k_excel->get_data_from_excel($_FILES['file']['tmp_name'], 5);
+            if ($data_import['state'] == 1 && !empty($data_import['data'][0])) {
+                $products = [];
+                foreach ($data_import['data'][0] as $product) {
+                    if (empty($product[1])) continue;
+                    $products[] = [
+                        "name" => $product[1],
+                        "price" => $product[2],
+                        "unit" => $product[3],
+                        "code" => $product[4],
+                    ];
+                }
+                if (count($products)) $this->model->insert_batch($products);
+                $dataReturn["state"] = 1;
+                $dataReturn['msg'] = "Import sản phẩm thành công.";
+            } else {
+                $dataReturn["state"] = 0;
+                $dataReturn['msg'] = "Lỗi khi đọc file";
+            }
+        } else {
+            $dataReturn["state"] = 0;
+            $dataReturn['msg'] = "Lỗi file import";
+        }
+        echo json_encode($dataReturn);
         return TRUE;
     }
 }

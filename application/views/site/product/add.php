@@ -27,7 +27,7 @@ $id = isset($record_data->id) ? $record_data->id : "";
                         <label class="row-label">Giá bán:</label>
                         <div class="row-input">
                             <input type="number" name="price" value="<?php echo empty($record_data->price) ? '' : $record_data->price; ?>"
-                                   placeholder="Sức chứa">
+                                   placeholder="Giá bán">
                         </div>
                     </div>
                     <div class="form-row">

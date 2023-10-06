@@ -6,11 +6,12 @@
             $id = $record_data->id;
             $public = isset($record_data->public) ? $record_data->public : NULL;
             $row_name = $record_data->name;
+            $unit = $record_data->unit;
             ?>
             <span class="content-row">
                 <span class="content-col col-info">
                     <span class="info-name" title="<?php echo $row_name; ?>">
-                        <?php echo $row_name; ?>
+                        <?php echo $row_name . ($unit ? " ($unit)" : ""); ?>
                         <a class="btn-edit hidden e_ajax_link"
                            href="<?php echo isset($url_edit) ? $url_edit . "/" . $id : ''; ?>"></a>
                     </span>
