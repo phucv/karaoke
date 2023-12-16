@@ -1,0 +1,55 @@
+.btn-action {
+    border: 1px solid #0a9d57;
+    border-radius: 4px;
+    color: #0a9d57;
+    padding: 2px 5px;
+}
+
+.btn-action:hover {
+    cursor: pointer;
+    background: #0a9d57;
+    color: #fff;
+}
+
+.modal-body {
+    height: 75vh;
+}
+
+.add_purchase .col-right {
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.add_purchase .select2-container {
+    width: auto !important;
+}
+
+.add_purchase .select2-container--default .select2-selection--single {
+    width: 300px;
+}
+
+.add_purchase table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.add_purchase table th, .add_purchase table td {
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+}
+
+.add_purchase .product input {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+
+.add_purchase .col-right .text-value {
+    padding-right: 16px;
+}
+
+.add_purchase .remove_purchase {
+    font-size: 14px;
+    color: red;
+    border-radius: 50%;
+    border: 1px solid;
+}

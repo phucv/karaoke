@@ -16,6 +16,20 @@
                            href="<?php echo isset($url_edit) ? $url_edit . "/" . $id : ''; ?>"></a>
                     </span>
                     <span class="info-other">
+                        <span class="info-other-left width-50">
+                            <span class="info-topic">
+                                <i class="material-icons">local_offer</i>
+                                <span>
+                                    <b>Giá mua: </b><?php echo empty($record_data->purchase_price) ? 0 : number_format($record_data->purchase_price, 0, ',', '.'); ?> (VNĐ)
+                                </span>
+                            </span>
+                            <span class="info-topic">
+                                <i class="material-icons">local_offer</i>
+                                <span>
+                                    <b>Mã sản phẩm: </b><?php echo empty($record_data->code) ? "" : $record_data->code; ?>
+                                </span>
+                            </span>
+                        </span>
                         <span class="info-other-left">
                             <span class="info-topic">
                                 <i class="material-icons">local_offer</i>
@@ -26,11 +40,11 @@
                             <span class="info-topic">
                                 <i class="material-icons">local_offer</i>
                                 <span>
-                                    <b>Mã sản phẩm: </b><?php echo empty($record_data->code) ? "" : $record_data->code; ?>
+                                    <b>Tồn kho: </b><?php echo empty($record_data->quantity) ? 0 : $record_data->quantity; ?>
                                 </span>
+                    </span>
                             </span>
                         </span>
-                    </span>
                 </span>
                 <span class="content-col col-status">
                     <span class="status-icon">

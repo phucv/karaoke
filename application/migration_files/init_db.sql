@@ -19,7 +19,7 @@ CREATE TABLE `bill_details` (
   `lastest_update_by` int(11) DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='luu thong tin tai khoan nguoi dung dang nhap he thong';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for bills
@@ -39,7 +39,7 @@ CREATE TABLE `bills` (
   `lastest_update_by` int(11) DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='luu thong tin tai khoan nguoi dung dang nhap he thong';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for ci_migrations
@@ -96,12 +96,20 @@ CREATE TABLE `config_menu` (
 -- Records of config_menu
 -- ----------------------------
 BEGIN;
-INSERT INTO `config_menu` VALUES (1, 1, 'Làm việc', 'work', 'work.*', '<i class=\"fa fa-book\"></i>', NULL, 1, 1, '2020-01-09 10:20:11', 1, NULL, NULL, 0, '');
+INSERT INTO `config_menu` VALUES (1, 1, 'Làm việc', NULL, NULL, '<i class=\"fa fa-book\"></i>', NULL, 1, 1, '2020-01-09 10:20:11', 1, NULL, NULL, 0, '');
 INSERT INTO `config_menu` VALUES (2, 1, 'Quản lý phòng', 'room', 'room.*', 'domain', NULL, 2, 1, NULL, NULL, NULL, NULL, 0, NULL);
-INSERT INTO `config_menu` VALUES (3, 1, 'Quản lý sản phẩm', 'product', 'product.*', 'card_giftcard', NULL, 3, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (3, 1, 'Quản lý sản phẩm', '', NULL, 'card_giftcard', NULL, 3, 1, NULL, NULL, NULL, NULL, 0, NULL);
 INSERT INTO `config_menu` VALUES (4, 1, 'Quản lý nhân viên', 'user', 'user.*', 'person', NULL, 4, 1, NULL, NULL, NULL, NULL, 0, NULL);
-INSERT INTO `config_menu` VALUES (5, 2, 'Làm việc', 'work', 'work.*', '<i class=\"fa fa-book\"></i>', NULL, 1, 1, NULL, NULL, NULL, NULL, 0, NULL);
-INSERT INTO `config_menu` VALUES (6, 1, 'Hoá đơn', 'bill', 'bill.*', 'pie_chart', NULL, 5, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (5, 2, 'Làm việc', NULL, NULL, '<i class=\"fa fa-book\"></i>', NULL, 1, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (6, 1, 'Giao dịch', NULL, NULL, 'pie_chart', NULL, 5, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (7, 1, 'Sản phẩm', 'product', 'product.*', 'card_giftcard', 3, 1, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (8, 1, 'Danh mục', 'category_product', 'category_product.*', 'card_giftcard', 3, 2, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (9, 1, 'Hoá đơn', 'bill', 'bill.*', 'pie_chart', 6, 1, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (10, 1, 'Nhập hàng', 'purchase_order', 'purchase_order.*', 'pie_chart', 6, 2, 1, NULL, NULL, NULL, NULL, 0, NULL);
+INSERT INTO `config_menu` VALUES (11, 1, 'Phòng hát', 'work', 'work.*', '<i class=\"fa fa-book\"></i>', 1, 1, 1, '2020-01-09 10:20:11', 1, NULL, NULL, 0, '');
+INSERT INTO `config_menu` VALUES (12, 1, 'Bán hàng', 'sale', 'sale.*', '<i class=\"fa fa-book\"></i>', 1, 2, 1, '2020-01-09 10:20:11', 1, NULL, NULL, 0, '');
+INSERT INTO `config_menu` VALUES (13, 2, 'Phòng hát', 'work', 'work.*', '<i class=\"fa fa-book\"></i>', 5, 1, 1, '2020-01-09 10:20:11', 1, NULL, NULL, 0, '');
+INSERT INTO `config_menu` VALUES (14, 2, 'Bán hàng', 'sale', 'sale.*', '<i class=\"fa fa-book\"></i>', 5, 2, 1, '2020-01-09 10:20:11', 1, NULL, NULL, 0, '');
 COMMIT;
 
 -- ----------------------------
@@ -122,7 +130,7 @@ CREATE TABLE `products` (
   `lastest_update_by` int(11) DEFAULT NULL,
   `deleted` tinyint(4) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='luu thong tin tai khoan nguoi dung dang nhap he thong';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for rooms
@@ -144,7 +152,7 @@ CREATE TABLE `rooms` (
   `deleted` tinyint(4) NOT NULL DEFAULT 0,
   `avatar` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='luu thong tin tai khoan nguoi dung dang nhap he thong';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for users

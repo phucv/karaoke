@@ -1,0 +1,18 @@
+.modal-dialog {
+    width: 900px;
+}
+
+.add_product table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.add_product table th, .add_product table td {
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+}
+
+.add_product .unit input {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}

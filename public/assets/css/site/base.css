@@ -1,7 +1,7 @@
 /* Resets
 ------------------------------------------------------------------------------------------------------*/
 
-ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input, iframe, img {
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, input, iframe, img {
     margin: 0;
     padding: 0;
     border: 0;

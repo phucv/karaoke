@@ -1,0 +1,43 @@
+.add_sale .col-right {
+    border-left: 1px solid #ccc;
+    padding-left: 10px;
+}
+
+.add_sale .select2-container {
+    width: auto !important;
+}
+
+.add_sale .select2-container--default .select2-selection--single {
+    width: 300px;
+}
+
+.add_sale table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.add_sale table th, .add_sale table td {
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+}
+
+.add_sale .product input {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+
+.add_sale .col-right .text-value {
+    padding-right: 16px;
+}
+
+.add_sale .product .value_total, .add_sale .product .value_total:focus-visible {
+    border: none;
+    outline: none;
+}
+
+.add_sale .remove_sale {
+    font-size: 14px;
+    color: red;
+    border-radius: 50%;
+    border: 1px solid;
+}

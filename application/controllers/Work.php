@@ -164,7 +164,7 @@ class Work extends Site_base {
         }
         $total = $grand_total - $discount_amount;
         $data_bill = [
-            'total' => $total > 0 ? $total : 0,
+            'total' => max($total, 0),
             'discount_amount' => $discount_amount,
             'grand_total' => $grand_total,
             'status' => 'done',
