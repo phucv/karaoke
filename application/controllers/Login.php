@@ -61,6 +61,7 @@ class Login extends Site_login_layout {
                     $user_role = $login->role_data;
                     // save cookie data user
                     if ($remember) {
+                        $this->load->helper('cookie');
                         set_cookie("name", $username, time() / 1000 + 365 * 24 * 60 * 60);
                         set_cookie("pass", $password, time() / 1000 + 365 * 24 * 60 * 60);
                     }
@@ -117,6 +118,7 @@ class Login extends Site_login_layout {
         $this->session->set_flashdata('flash_message', "Đăng xuất thành công");
         // reset cookie when logout
         if (!empty($_COOKIE['name'])) {
+            $this->load->helper('cookie');
             unset($_COOKIE['name']);
             unset($_COOKIE['pass']);
             set_cookie('name', '', time() / 1000 - 3600);

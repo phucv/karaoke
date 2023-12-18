@@ -79,10 +79,10 @@ $product_parent = empty($product_parent) ? [] : $product_parent;
                                 <input type="number" class="e_discount_amount_total align-right" value="0" name="discount_amount_total">
                             </div>
                         </div>
-                        <div class="form-row text-value">
+                        <div class="form-row">
                             <label class="row-label width-55">Cần trả nhà cung cấp:</label>
                             <div class="row-input width-40">
-                                <div class="e_total align-right">0</div>
+                                <input type="text" class="e_total align-right total" value="0">
                             </div>
                         </div>
                     </div>

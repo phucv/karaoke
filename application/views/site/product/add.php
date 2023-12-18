@@ -122,7 +122,7 @@ $child = empty($child) ? [] : $child;
                                 </tr>
                             </table>
                         </div>
-                        <div class="form-row"><span class="e_add_unit cursor-pointer"><i class="material-icons">add</i>Thêm đơn vị bán</span></div>
+                        <div class="form-row"><span class="e_add_unit cursor-pointer hover add_unit"><i class="material-icons">add</i>Thêm đơn vị bán</span></div>
                     </fieldset>
                 </div>
             </div>

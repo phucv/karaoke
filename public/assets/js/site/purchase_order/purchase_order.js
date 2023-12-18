@@ -3,6 +3,8 @@ $(document).ready(function () {
     $(document).on("change", ".e_product_quantity input, .e_product_purchase_price input, .e_discount_amount input", calculatorRowTotal);
     $(document).on("change", ".e_discount_amount_total", calculatorTotal);
     $(document).on("click", ".e_remove_purchase", removePurchase);
+    $(document).on("keyup", ".e_customer_pay", refundCustomer);
+    $(document).on("change", ".e_total", refundCustomer);
 });
 
 function chosenProduct () {
@@ -68,7 +70,7 @@ function calculatorTotal() {
     form.find('.e_grand_total').text(total);
     let discountTotal = parseInt(form.find('.e_discount_amount_total').val());
     if (discountTotal > total) discountTotal = total;
-    form.find('.e_total').text(total - discountTotal);
+    form.find('.e_total').val(total - discountTotal).trigger('change');
 }
 
 function saleCallback(obj, data) {
@@ -90,4 +92,9 @@ function saleCallback(obj, data) {
         link.target = "_blank";
         link.click();
     }, 300);
+}
+
+function refundCustomer() {
+    let form = $(this).closest('form');
+    if (parseInt(form.find('.e_customer_pay').val())) form.find('.e_refund_customer').text(parseInt(form.find('.e_customer_pay').val()) - parseInt(form.find('.e_total').val()));
 }

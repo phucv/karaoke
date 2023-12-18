@@ -35,6 +35,11 @@
     outline: none;
 }
 
+.add-form-input .form-row .row-input input.total {
+    border: none;
+    outline: none;
+}
+
 .add_sale .remove_sale {
     font-size: 14px;
     color: red;

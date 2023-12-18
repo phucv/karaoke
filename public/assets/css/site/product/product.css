@@ -16,3 +16,13 @@
     border-bottom: 1px solid #ccc;
     padding: 5px;
 }
+
+.add_product .add_unit {
+    font-size: 14px;
+    color: #4a90e2;
+}
+
+.add_product .add_unit i {
+    font-size: 18px;
+    vertical-align: -4px;
+}

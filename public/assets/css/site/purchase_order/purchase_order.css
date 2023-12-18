@@ -47,6 +47,10 @@
     padding-right: 16px;
 }
 
+.add_purchase .col-right .total {
+    border: none;
+}
+
 .add_purchase .remove_purchase {
     font-size: 14px;
     color: red;

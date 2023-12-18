@@ -75,22 +75,22 @@ $products = empty($products) ? [] : $products;
                                name="discount_amount_total">
                     </div>
                 </div>
-                <div class="form-row text-value">
+                <div class="form-row">
                     <label class="row-label width-55">Khách cần trả:</label>
                     <div class="row-input width-40">
-                        <div class="e_total align-right">0</div>
+                        <input type="number" class="e_total align-right total" value="0" readonly>
                     </div>
                 </div>
                 <div class="form-row">
                     <label class="row-label width-55">Khách thanh toán:</label>
                     <div class="row-input width-40">
-                        <input type="number" class=" align-right" value="0">
+                        <input type="number" class="e_customer_pay align-right" value="0">
                     </div>
                 </div>
                 <div class="form-row text-value">
                     <label class="row-label width-55">Tiền thừa trả khách:</label>
                     <div class="row-input width-40">
-                        <div class=" align-right">0</div>
+                        <div class="e_refund_customer align-right">0</div>
                     </div>
                 </div>
             </div>
