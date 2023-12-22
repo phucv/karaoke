@@ -2,6 +2,7 @@
 $data_bill = empty($data_bill) ? [] : $data_bill;
 $bill_details = empty($bill_details) ? [] : $bill_details;
 $products = empty($products) ? [] : $products;
+$customer = empty($customer) ? (object)[] : $customer;
 ?>
 <style>
     body {
@@ -54,18 +55,18 @@ $products = empty($products) ? [] : $products;
     }
 </style>
 <div class="inline" style="font-size: 18px">
-    <div class="title_info bold">
-        <div>KARAOKE MẠNH HÙNG</div>
+    <div class="title_info bold" style="text-align: center">
+        <div>SHOWROOM MÁY LỌC NƯỚC EUROPURA</div>
     </div>
     <div class="title_info bold" style="float: right; margin-top: 0">
         <div>HOÁ ĐƠN THANH TOÁN</div>
     </div>
 </div>
 <div class="inline" style="font-size: 14px">
-    Địa chỉ: Thuận Thành, Bắc Ninh
+    Địa chỉ: Số 44 - Phố Thú Y - Đức Thượng - Hoài Đức - Hà Nội
 </div>
 <div class="inline" style="font-size: 14px">
-    Số điện thoại: 0918273645
+    Số điện thoại: 0904 248 568 - 081 555 8883
 </div>
 <div class="fz-18" style="margin: 15px 0">
     <div>
@@ -114,6 +115,8 @@ $products = empty($products) ? [] : $products;
     <div class="title_info" style="width: 100px; margin-top: 0">
         <div style="color: #fff;">PhuCV</div>
         <div class="center">Khách hàng</div>
+        <div style="color: #fff;">PhuCV</div>
+        <div class="center"><?php echo empty($customer->name) ? "" : $customer->name; ?></div>
     </div>
     <div class="title_info" style="width: 300px;float: right; margin-top: 0">
         <div class="center">Ngày <?php echo date("d"); ?> tháng <?php echo date("m"); ?> năm <?php echo date("Y"); ?></div>

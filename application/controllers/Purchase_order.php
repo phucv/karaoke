@@ -5,6 +5,7 @@
  * @property M_purchase_order model
  * @property M_purchase_order_detail purchase_order_detail
  * @property M_product product
+ * @property M_supplier supplier
  */
 class Purchase_order extends Site_base {
 
@@ -97,7 +98,9 @@ class Purchase_order extends Site_base {
         $data["url_save_data"] = site_url("purchase_order/add_save");
         // data material
         $this->load->model("M_product", "product");
+        $this->load->model("M_supplier", "supplier");
         $data["products"] = $this->product->get_many_by(["public" => 1]);
+        $data["suppliers"] = $this->supplier->get_many_by([]);
         $product_parent = $this->product->get_many_by(["public" => 1, "parent_id" => null]);
         foreach ($product_parent as $product) {
             $data["product_parent"][$product->id] = $product;
@@ -168,12 +171,14 @@ class Purchase_order extends Site_base {
             return FALSE;
         }
         $discount_amount_total = empty($data["discount_amount_total"]) ? 0 : $data["discount_amount_total"];
+        $supplier_id = empty($data["supplier_id"]) ? NULL : $data["supplier_id"];
         $purchase = [
             "code" => "NH" . date("YmdHis"),
             "status" => "done",
             "total" => $grand_total > $discount_amount_total ? $grand_total - $discount_amount_total : 0,
             "discount_amount" => $discount_amount_total,
             "grand_total" => $grand_total,
+            "supplier_id" => $supplier_id,
             "payment_date" => date("Y-m-d H:i:s"),
         ];
         $this->db->trans_begin();

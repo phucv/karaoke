@@ -7,8 +7,13 @@
     width: auto !important;
 }
 
-.add_sale .select2-container--default .select2-selection--single {
+.add_sale .col-left .select2-container--default .select2-selection--single {
     width: 300px;
+}
+
+.add_sale .col-right .select2-container--default .select2-selection--single {
+    min-width: 200px;
+    max-width: 300px;
 }
 
 .add_sale table {
@@ -33,6 +38,11 @@
 .add_sale .product .value_total, .add_sale .product .value_total:focus-visible {
     border: none;
     outline: none;
+}
+
+.add-form-input .form-row .row-input .add_customer {
+    position: absolute;
+    top: 2px;
 }
 
 .add-form-input .form-row .row-input input.total {

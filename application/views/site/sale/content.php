@@ -5,14 +5,19 @@ echo minify_css_js('css', array(
     'assets/css/site/base_manager/table.css',
     'assets/css/site/sale/sale.css',
 ), 'sale.css');
-echo minify_css_js('js', 'assets/js/site/purchase_order/purchase_order.js', 'purchase_order.js');
+echo minify_css_js('js', [
+    'assets/js/site/purchase_order/purchase_order.js',
+    'assets/js/site/sale/sale.js',
+    'assets/js/site/customer/customer.js',
+], 'purchase_order.js');
 $products = empty($products) ? [] : $products;
+$customers = empty($customers) ? [] : $customers;
 ?>
 
 <form data-url="<?php echo isset($url_save_data) ? $url_save_data : ''; ?>" class="e_ajax_submit"
       method="post" enctype="multipart/form-data" novalidate>
     <div class="d-flex box-content add_sale">
-        <div class="width-70">
+        <div class="width-70 col-left">
             <div class="add-form-input">
                 <div class="row-input">
                     <select class="site-select2 e_product" data-placeholder="Chọn sản phẩm">
@@ -62,6 +67,19 @@ $products = empty($products) ? [] : $products;
         </div>
         <div class="width-30 col-right">
             <div class="add-form-input">
+                <div class="form-row">
+                    <div class="row-input width-100 pos-rel">
+                        <select class="site-select2 e_customer" name="customer_id">
+                            <option value="">Chọn khách hàng</option>
+                            <?php foreach ($customers as $customer) {
+                                $des = $customer->phone ?: $customer->email;
+                                $des = $des ? " - $des" : "";
+                                echo "<option value='$customer->id'>$customer->name $des</option>";
+                            } ?>
+                        </select>
+                        <span class="hover e_ajax_link add_customer cursor-pointer" href="<?php echo site_url('customer/add') ?>" data='{"callback":"addCustomerSale"}'><i class="material-icons">add</i></span>
+                    </div>
+                </div>
                 <div class="form-row text-value">
                     <label class="row-label width-55">Tổng tiền hàng:</label>
                     <div class="row-input width-40">

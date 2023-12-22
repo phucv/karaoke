@@ -1,5 +1,6 @@
 <?php
 $products = empty($products) ? [] : $products;
+$suppliers = empty($suppliers) ? [] : $suppliers;
 $product_parent = empty($product_parent) ? [] : $product_parent;
 ?>
 <div class="modal-dialog width-80">
@@ -67,6 +68,18 @@ $product_parent = empty($product_parent) ? [] : $product_parent;
                 </div>
                 <div class="width-30 col-right">
                     <div class="add-form-input">
+                        <div class="form-row">
+                            <div class="row-input width-100">
+                                <select class="site-select2" name="supplier_id">
+                                    <option value="">Chọn nhà cung cấp</option>
+                                    <?php foreach ($suppliers as $supplier) {
+                                        $des = $supplier->phone ?: $supplier->email;
+                                        $des = $des ? " - $des" : "";
+                                        echo "<option value='$supplier->id'>$supplier->name $des</option>";
+                                    } ?>
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-row text-value">
                             <label class="row-label width-55">Tổng tiền hàng:</label>
                             <div class="row-input width-40">

@@ -5,6 +5,7 @@
  * @property M_bill bill
  * @property M_bill_detail bill_detail
  * @property M_product product
+ * @property M_customer customer
  */
 class Sale extends Site_layout {
 
@@ -18,10 +19,11 @@ class Sale extends Site_layout {
     }
 
     public function index() {
-        $user_data = $this->session->userdata('user_data');
         $data = array();
         $this->load->model("M_product", "product");
+        $this->load->model("M_customer", "customer");
         $data["products"] = $this->product->get_many_by(["public" => 1]);
+        $data["customers"] = $this->customer->get_many_by([]);
         $product_parent = $this->product->get_many_by(["public" => 1, "parent_id" => null]);
         foreach ($product_parent as $product) {
             $data["product_parent"][$product->id] = $product;
@@ -86,11 +88,13 @@ class Sale extends Site_layout {
             return FALSE;
         }
         $discount_amount_total = empty($data["discount_amount_total"]) ? 0 : $data["discount_amount_total"];
+        $customer_id = empty($data["customer_id"]) ? NULL : $data["customer_id"];
         $data_bill = [
             "status" => "done",
             "total" => $grand_total > $discount_amount_total ? $grand_total - $discount_amount_total : 0,
             "discount_amount" => $discount_amount_total,
             "grand_total" => $grand_total,
+            "customer_id" => $customer_id,
             "payment_date" => date("Y-m-d H:i:s"),
         ];
         $this->db->trans_begin();
@@ -130,9 +134,11 @@ class Sale extends Site_layout {
     }
 
     private function _export_pdf($data_bill, $bill_details, $products, $pdfFilePath) {
+        $this->load->model("M_customer", "customer");
         $data = [
             "data_bill" => $data_bill,
-            "bill_details" => $bill_details
+            "bill_details" => $bill_details,
+            "customer" => $this->customer->get($data_bill["customer_id"])
         ];
         foreach ($products as $product) {
             $data["products"][$product->id] = $product;
