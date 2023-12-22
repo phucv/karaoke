@@ -49,7 +49,7 @@ class Sale extends Site_layout {
         $product_ids = empty($data["product_id"]) ? [] : $data["product_id"];
         $products = count($product_ids) ? $this->product->get_many($product_ids) : [];
         if (!$products) {
-            $return_data['msg'] = "Không có sản phẩm hợp lệ để nhập hàng";
+            $return_data['msg'] = "Không có sản phẩm hợp lệ để bán hàng";
             echo json_encode($return_data);
             return FALSE;
         }
@@ -83,7 +83,7 @@ class Sale extends Site_layout {
             }
         }
         if (!count($bill_details)) {
-            $return_data['msg'] = "Không có số lượng sản phẩm để nhập hàng";
+            $return_data['msg'] = "Không có số lượng sản phẩm để bán hàng";
             echo json_encode($return_data);
             return FALSE;
         }
@@ -97,6 +97,14 @@ class Sale extends Site_layout {
             "customer_id" => $customer_id,
             "payment_date" => date("Y-m-d H:i:s"),
         ];
+        $quantity_current = $this->product->get_many(array_keys($quantity_parent));
+        foreach ($quantity_current as $q_current) {
+            if ($quantity_parent[$q_current->id] > $q_current->quantity) {
+                $return_data['msg'] = "$q_current->name không đủ số lượng sản phẩm để bán hàng";
+                echo json_encode($return_data);
+                return FALSE;
+            }
+        }
         $this->db->trans_begin();
         $status = $bill_id = $this->bill->insert($data_bill);
         if ($bill_id) {

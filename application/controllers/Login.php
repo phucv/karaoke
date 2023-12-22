@@ -72,7 +72,7 @@ class Login extends Site_login_layout {
                     if ($redirect_login) {
                         $dataReturn["redirect"] = $redirect_login;
                     } else {
-                        $dataReturn["redirect"] = site_url('work');
+                        $dataReturn["redirect"] = site_url('sale');
                     }
                 }
             } else {
@@ -95,7 +95,7 @@ class Login extends Site_login_layout {
                 if ($redirect_login) {
                     redirect($redirect_login);
                 } else {
-                    redirect(site_url('work'));
+                    redirect(site_url('sale'));
                 }
             }
         } else {
