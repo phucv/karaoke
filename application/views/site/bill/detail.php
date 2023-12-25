@@ -28,8 +28,8 @@ $products = empty($products) ? [] : $products;
                             <?php foreach ($bill_details as $k => $detail) { ?>
                                 <tr>
                                     <td class="align-center"><?php echo $k + 1; ?></td>
-                                    <td><?php echo !empty($products[$detail->product_id]->name) ? $products[$detail->product_id]->name : "Phòng hát"; ?></td>
-                                    <td><?php echo !empty($products[$detail->product_id]->unit) ? $products[$detail->product_id]->unit : "giờ"; ?></td>
+                                    <td><?php echo !empty($products[$detail->product_id]->name) ? $products[$detail->product_id]->name : ""; ?></td>
+                                    <td><?php echo !empty($products[$detail->product_id]->unit) ? $products[$detail->product_id]->unit : ""; ?></td>
                                     <td class="align-right"><?php echo empty($products[$detail->product_id]->name) ? number_format($detail->quantity, 1, ',', '.') : (int)$detail->quantity; ?></td>
                                     <td class="align-right"><?php echo number_format($detail->price, 0, ',', '.'); ?></td>
                                     <td class="align-right"><?php echo number_format($detail->value_total, 0, ',', '.'); ?></td>

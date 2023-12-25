@@ -3,10 +3,12 @@ $data_bill = empty($data_bill) ? [] : $data_bill;
 $bill_details = empty($bill_details) ? [] : $bill_details;
 $products = empty($products) ? [] : $products;
 $customer = empty($customer) ? (object)[] : $customer;
+$total_price_string = empty($total_price_string) ? "" : $total_price_string;
 ?>
 <style>
     body {
         width: 900px;
+        line-height: 1.7;
     }
 
     .fz-18 {
@@ -32,11 +34,7 @@ $customer = empty($customer) ? (object)[] : $customer;
 
     .title_info {
         float: left;
-        width: 250px;
-        padding: 10px 0 10px 20px;
-        margin: 10px;
         height: 50px;
-        line-height: 1.7;
     }
 
     table {
@@ -54,21 +52,40 @@ $customer = empty($customer) ? (object)[] : $customer;
         border-collapse: collapse;
     }
 </style>
-<div class="inline" style="font-size: 18px">
-    <div class="title_info bold" style="text-align: center">
-        <div>SHOWROOM MÁY LỌC NƯỚC EUROPURA</div>
+<div class="inline" style="font-size: 14px">
+    <div>Showroom máy lọc nước Europura</div>
+    <div>Số 44 - Phố Thú Y - Đức Thượng - Hoài Đức - Hà Nội</div>
+    <div>0904 248 568 - 081 555 8883</div>
+</div>
+<div class="inline" style="font-size: 18px; margin:10px;">
+    <div class="bold" style="text-align: center;">
+        <div>ĐƠN BÁN HÀNG</div>
     </div>
-    <div class="title_info bold" style="float: right; margin-top: 0">
-        <div>HOÁ ĐƠN THANH TOÁN</div>
+</div>
+<div class="inline" style="font-size: 14px;">
+    <div class="title_info" style="width: 470px; margin-top: 0">
+        <div>Tên khách hàng: <?php echo empty($customer->name) ? "................................................................................" : $customer->name; ?></div>
+        <div>Địa chỉ: <?php echo empty($customer->address) ? ".............................................................................................." : $customer->address; ?></div>
+        <div>Mã số thuế: <?php echo empty($customer->tax_code) ? "........................................................................................" : $customer->tax_code; ?></div>
+    </div>
+    <div class="title_info" style="width: 200px; margin-top: 0">
+        <div>Ngày: <?php echo date("d/m/Y"); ?></div>
+        <div>Số: <?php echo "DH" . str_repeat(0, 7 - strlen($data_bill["id"])) . $data_bill["id"]; ?></div>
+        <div>Loại tiền: VNĐ</div>
     </div>
 </div>
 <div class="inline" style="font-size: 14px">
-    Địa chỉ: Số 44 - Phố Thú Y - Đức Thượng - Hoài Đức - Hà Nội
+    <div>Diễn giải: ....................................................................................................................................................</div>
 </div>
-<div class="inline" style="font-size: 14px">
-    Số điện thoại: 0904 248 568 - 081 555 8883
+<div class="inline" style="font-size: 14px;">
+    <div class="title_info" style="width: 350px; margin-top: 0">
+        <div>Điện thoại: <?php echo empty($customer->phone) ? "...................................................................." : $customer->phone; ?></div>
+    </div>
+    <div class="title_info" style="width: 310px; margin-top: 0">
+        <div>Fax: .....................................................................</div>
+    </div>
 </div>
-<div class="fz-18" style="margin: 15px 0">
+<div class="fz-18" style="margin: 0 0 15px 0">
     <div>
         <table>
             <tr>
@@ -86,8 +103,8 @@ $customer = empty($customer) ? (object)[] : $customer;
                 ?>
                 <tr>
                     <td class="center"><?php echo $k++;?></td>
-                    <td><?php echo !empty($products[$product_id]->name) ? $products[$product_id]->name : "Phòng hát"; ?></td>
-                    <td><?php echo !empty($products[$product_id]->unit) ? $products[$product_id]->unit : "giờ"; ?></td>
+                    <td><?php echo !empty($products[$product_id]->name) ? $products[$product_id]->name : ""; ?></td>
+                    <td><?php echo !empty($products[$product_id]->unit) ? $products[$product_id]->unit : ""; ?></td>
                     <td class="right"><?php echo empty($products[$product_id]->unit) ? number_format($bill_detail['quantity'], 1, ',', '.') : $bill_detail['quantity']; ?></td>
                     <td class="right"><?php echo number_format($bill_detail['price'], 0, ',', '.'); ?></td>
                     <td class="right"><?php echo number_format($bill_detail['value_total'], 0, ',', '.'); ?></td>
@@ -95,7 +112,7 @@ $customer = empty($customer) ? (object)[] : $customer;
             <?php } ?>
             <tr>
                 <td></td>
-                <td colspan="4" class="right">Cộng sản phẩm</td>
+                <td colspan="4" class="right">Cộng tiền hàng</td>
                 <td class="right"><?php echo number_format($data_bill['grand_total'], 0, ',', '.'); ?></td>
             </tr>
             <tr>
@@ -108,18 +125,23 @@ $customer = empty($customer) ? (object)[] : $customer;
                 <td colspan="4" class="right">Tổng</td>
                 <td class="right"><?php echo number_format($data_bill['total'], 0, ',', '.')?></td>
             </tr>
+            <tr>
+                <td colspan="6">Số tiền viết bằng chữ: <?php echo $total_price_string; ?></td>
+            </tr>
         </table>
     </div>
+</div>
+<div class="inline" style="font-size: 14px">
+    <div>Ngày giao hàng: <?php echo date("d/m/Y"); ?></div>
+    <div>Địa điểm giao hàng: .....................................................................................................................................</div>
+    <div>Điều kiện thanh toán: ...................................................................................................................................</div>
 </div>
 <div class="inline" style="font-size: 14px;">
     <div class="title_info" style="width: 100px; margin-top: 0">
         <div style="color: #fff;">PhuCV</div>
-        <div class="center">Khách hàng</div>
-        <div style="color: #fff;">PhuCV</div>
-        <div class="center"><?php echo empty($customer->name) ? "" : $customer->name; ?></div>
     </div>
     <div class="title_info" style="width: 300px;float: right; margin-top: 0">
-        <div class="center">Ngày <?php echo date("d"); ?> tháng <?php echo date("m"); ?> năm <?php echo date("Y"); ?></div>
-        <div class="center">Người viết hoá đơn</div>
+        <div class="center">Người lập</div>
+        <div class="center"><i>(Ký, họ tên)</i></div>
     </div>
 </div>

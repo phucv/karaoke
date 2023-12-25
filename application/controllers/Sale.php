@@ -108,6 +108,7 @@ class Sale extends Site_layout {
         $this->db->trans_begin();
         $status = $bill_id = $this->bill->insert($data_bill);
         if ($bill_id) {
+            $data_bill['id'] = $bill_id;
             foreach ($bill_details as $key => $detail) {
                 $bill_details[$key]["bill_id"] = $bill_id;
             }
@@ -146,7 +147,8 @@ class Sale extends Site_layout {
         $data = [
             "data_bill" => $data_bill,
             "bill_details" => $bill_details,
-            "customer" => $this->customer->get($data_bill["customer_id"])
+            "customer" => $this->customer->get($data_bill["customer_id"]),
+            "total_price_string" => $this->read_money_for_vietnamese($data_bill['total'])
         ];
         foreach ($products as $product) {
             $data["products"][$product->id] = $product;
